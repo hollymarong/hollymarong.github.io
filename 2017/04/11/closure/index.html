@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>闭包 | marong blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="堆堆是一种无序的数据结构，数据的存取方式根据引用直接获取，现实生活中常见的堆的例子：书架与书。 栈栈是一种高效的数据结构，只能在栈顶添加或删除数据，是一种后入先出(LIFO, last-in-first-out)的数据结构。现实生活常见的栈的例子：摞盘子。JavaScript没有严格意义上区分堆内存和栈内存。在JavaScript的执行环境在逻辑上实现了堆栈。执行环境中的变量对象保存在堆内存中。">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="闭包">
+<meta property="og:url" content="http://yoursite.com/2017/04/11/closure/index.html">
+<meta property="og:site_name" content="marong blog">
+<meta property="og:description" content="堆堆是一种无序的数据结构，数据的存取方式根据引用直接获取，现实生活中常见的堆的例子：书架与书。 栈栈是一种高效的数据结构，只能在栈顶添加或删除数据，是一种后入先出(LIFO, last-in-first-out)的数据结构。现实生活常见的栈的例子：摞盘子。JavaScript没有严格意义上区分堆内存和栈内存。在JavaScript的执行环境在逻辑上实现了堆栈。执行环境中的变量对象保存在堆内存中。">
+<meta property="og:updated_time" content="2017-05-09T02:05:06.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="闭包">
+<meta name="twitter:description" content="堆堆是一种无序的数据结构，数据的存取方式根据引用直接获取，现实生活中常见的堆的例子：书架与书。 栈栈是一种高效的数据结构，只能在栈顶添加或删除数据，是一种后入先出(LIFO, last-in-first-out)的数据结构。现实生活常见的栈的例子：摞盘子。JavaScript没有严格意义上区分堆内存和栈内存。在JavaScript的执行环境在逻辑上实现了堆栈。执行环境中的变量对象保存在堆内存中。">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">marong blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Less is more</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+  <a href="https://github.com/hollymarong"><img style="position: absolute; top: 0; right: 0; border: 0;z-index:2;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-closure" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/11/closure/" class="article-date">
+  <time datetime="2017-04-10T23:50:36.000Z" itemprop="datePublished">2017-04-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      闭包
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>堆<br>堆是一种无序的数据结构，数据的存取方式根据引用直接获取，现实生活中常见的堆的例子：书架与书。</li>
+<li>栈<br>栈是一种高效的数据结构，只能在栈顶添加或删除数据，是一种后入先出(LIFO, last-in-first-out)的数据结构。现实生活常见的栈的例子：摞盘子。<br>JavaScript没有严格意义上区分堆内存和栈内存。在JavaScript的执行环境在逻辑上实现了堆栈。<br>执行环境中的变量对象保存在堆内存中。<br>基础数据类型存储在栈内存中，基础数据类型是按值访问的，可以直接操作保存在变量终端额实际值。<br>引用数据类型的值是保存在堆内存中，引用类型的值是按引用访问的，不允许直接访问对内存中的位置，操作对象时实际是操作的对象的引用。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">比较</th>
+<th style="text-align:left">栈内存</th>
+<th style="text-align:left">堆内存</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">存储数据类型</td>
+<td style="text-align:left">基础数据类型</td>
+<td style="text-align:left">引用数据类型</td>
+</tr>
+<tr>
+<td style="text-align:left">存储值</td>
+<td style="text-align:left">大小固定</td>
+<td style="text-align:left">大小不固定，可动态调整</td>
+</tr>
+<tr>
+<td style="text-align:left">内存分配</td>
+<td style="text-align:left">编译器自动分配释放</td>
+<td style="text-align:left">程序分配</td>
+</tr>
+<tr>
+<td style="text-align:left">用途</td>
+<td style="text-align:left">主要用来执行程序</td>
+<td style="text-align:left">主要用来存放对象</td>
+</tr>
+<tr>
+<td style="text-align:left">特点</td>
+<td style="text-align:left">空间小，运行效率高</td>
+<td style="text-align:left">空间大，运行效率相对较低</td>
+</tr>
+<tr>
+<td style="text-align:left">存取方式</td>
+<td style="text-align:left">先进后出，后进先出</td>
+<td style="text-align:left">无序存储，可根据引用直接获取</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>调用栈</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">function printCallStack() &#123;</div><div class="line">    var i = 0;</div><div class="line">    var fun = arguments.callee;</div><div class="line">    do &#123;</div><div class="line">        fun = fun.arguments.callee.caller;</div><div class="line">        console.log(++i + &apos;: &apos; + fun);</div><div class="line">    &#125; while (fun);</div><div class="line">&#125;</div><div class="line"></div><div class="line">function c() &#123;</div><div class="line">    console.log(&apos;c&apos;);</div><div class="line">    printCallStack();</div><div class="line">&#125;</div><div class="line"></div><div class="line">function b() &#123;</div><div class="line">    console.log(&apos;b&apos;);</div><div class="line">    c();</div><div class="line">&#125;</div><div class="line"></div><div class="line">function a() &#123;</div><div class="line">    console.log(&apos;a&apos;);</div><div class="line">    b();</div><div class="line">&#125;</div><div class="line"></div><div class="line">a();</div></pre></td></tr></table></figure>
+<ul>
+<li>执行环境(execution context)<br>JavaScript执行环境定义了变量或函数有权访问的其他数据，决定了它们各自的行为。<br>每个执行环境都有一个与之关联的变量对象(variable object),环境中定义的所有变量和函数都保存在这个对象中，我们编写的代码无法访问这个对象，但解析器在处理数据的时候会再后台使用它。<br>某个执行环境中的所有代码执行完毕后，该环境被销毁，保存在其中的所有变量和函数定义也随之销毁.全局执行环境是最外围的一个执行环境（全局执行环境直到应用程序推出才会被销毁）。<br>JavaScript程序的执行流的机制: 每个函数都有自己的执行环境，当执行流进入一个函数时，函数的环境就会被推入到一个环境栈中，当函数执行之后，栈将其环境弹出，把控制权返回给之前的执行环境。</li>
+<li>作用域链(scope chain)：<br>当代码在一个环境中执行时，会创建变量对象的一个作用域链。作用域链的用途，是保证对执行环境有权访问的所有变量和函数的有序访问。<br>作用域链的前端，始终是当前执行的代码所在环境的变量对象,作用域链中的下一个变量来自包含环境，一直延续到全局执行环境，全局执行环境的变量对象始终是作用域链中的最后一个对象。<br>标识符解析是沿着作用域链一级一级地搜索标识符的过程。搜索过程始终从作用域链的前端开始，然后逐级向后，直到找到标识符为止(如果找不到标识符，通常会导致错误发生).<br>延长作用域链的两种情况：</li>
+<li>with语句</li>
+<li>try/catch语句中catch语句</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">buildUrl</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> qs = <span class="string">"?debug=true"</span>;</div><div class="line">    <span class="keyword">with</span>(location)&#123;</div><div class="line">        <span class="keyword">var</span> url = href + qs;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> url;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>with语句接收location对象，with语句的变量对象里包含了location对象,with语句引用href时，引用的是location.href</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">lengthenScopeChain</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">try</span>&#123;</div><div class="line">        <span class="keyword">var</span> dd = <span class="number">2</span>;</div><div class="line">        <span class="keyword">throw</span> <span class="string">'create error'</span>;</div><div class="line">    &#125; <span class="keyword">catch</span>(e) &#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'dd inner catch'</span>,dd);  <span class="comment">// 2</span></div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'e'</span>, e); <span class="comment">// create error</span></div><div class="line">    &#125;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'dd outer'</span>,dd); <span class="comment">// 2</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'e outer'</span>, e);  <span class="comment">//报错，e is not defined</span></div><div class="line">&#125;</div><div class="line">lengthenScopeChain();</div></pre></td></tr></table></figure>
+<p>catch语句接收e对象，catch语句的变量对象里包含了e对象</p>
+<ul>
+<li>作用域</li>
+</ul>
+<ol>
+<li><p>块级作用域<br>在一些类似C语言的编程语言中，花括号内的每一段代码都具有各自的作用域，而且变量在声明它们的代码段之外是不可见的，我们称为块级作用域。</p>
+</li>
+<li><p>javascript函数作用域<br>JavaScript中没有块级作用域，Javascript使用了函数作用域，就是函数的执行环境：变量在声明它们的函数体内以及这个函数体嵌套的任意函数体内都是有定义的。<br>Javascript的函数作用域是指在函数内声明的所有变量在函数体内始终是可见的,这意味着变量在声明之前甚至已经可用，Javascript的这个特性被非正式地称为申明提前,即Javascript函数里声明的所有变量(但不涉及赋值)都被提前至函数体的顶部,函数声明提前这步操作是在Javscript引擎预编译时进行的，是在代码开始运行之前。<br>在函数体内，局部变量的优先级高于同名的全局变量。<br>如果在函数声明的一个局部变量或者函数参数中带有的变量和全局变量重名，局部变量会覆盖全局变量</p>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//函数内的变量会覆盖同名的全局变量</span></div><div class="line"><span class="keyword">var</span> name = <span class="string">'global'</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkScope</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(name);</div><div class="line">    <span class="keyword">var</span> name = <span class="string">'local'</span>;</div><div class="line">&#125;</div><div class="line">checkScope() <span class="comment">//undefined</span></div><div class="line"></div><div class="line"><span class="comment">//函数内的参数会覆盖同名的全局变量</span></div><div class="line"><span class="keyword">var</span> name = <span class="string">'global'</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkScope</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(name);</div><div class="line">&#125;</div><div class="line">checkScope(); <span class="comment">//undefined</span></div></pre></td></tr></table></figure>
+<ul>
+<li>作用域链</li>
+</ul>
+<p>闭包就是内部函数可以访问定义他们的外部函数的变量和参数(除了this，arguments),也就是函数可以访问存在于该函数声明时的作用域内的变量和函数。<br>特点：</p>
+<ol>
+<li>闭包可以访问函数声明时所在作用域内的变量和函数</li>
+<li>即使外部函数已经返回，当前函数仍然可以引用外部函数所定义的变量</li>
+<li>闭包可以更新外部变量的值，闭包存储的是外部变量的引用.<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">scope</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> value;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        <span class="attr">get</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="keyword">return</span> value;</div><div class="line">        &#125;,</div><div class="line">        <span class="attr">set</span>: <span class="function"><span class="keyword">function</span>(<span class="params">newValue</span>) </span>&#123;</div><div class="line">            value = newValue;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> obj = scope();</div><div class="line">obj.get(); <span class="comment">//undefined</span></div><div class="line">obj.set(<span class="string">'marong'</span>);</div><div class="line">obj.get(); <span class="comment">//marong</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>优点：<br>1.避免全局变量的污染<br>2.减少代码的数量和复杂性<br>缺点：<br>1.会比其他函数占内存。<br>由于闭包会携带包含它的函数的作用域，因此会比其他函数占用更多的内存。</p>
+<ul>
+<li>内存</li>
+<li>内存的声明周期</li>
+</ul>
+<ol>
+<li>分配你所需要的内存</li>
+<li>使用分配到的内存（读，写）</li>
+<li>不需要是将其释放\归还</li>
+</ol>
+<ul>
+<li>Javascript垃圾回收机制<br>JavaScript具有自动垃圾回收机制，执行环境会负责管理代码执行过程中使用的内存,开发人员不用关心内存的使用问题，所需内存的分配以及无用内存的回收完全实现了自动管理。这种垃圾收集机制的原理：找到那些不再继续使用的变量，然后释放其占用的内存。垃圾回收器会按照固定的时间间隔，周期性的执行这一操作。<br>局部变量的生命周期，局部变量只在函数执行的过程中存在，在这个过程中，会为局部变量在堆或栈内存上分配相应空间，以便存储它们的值，然后在函数中使用这些变量，函数运行结束后，判断局部变量是否有用,无用变量进行标识，以备将来回收。<br>浏览器中标识无用变量的策略，通常有两种。</li>
+</ul>
+<ol>
+<li>标记清除<br>JavaScript中最常用的垃圾收集方式是标记清除(mark-and-sweep)。当变量进入环境是，将这个变量标记为“进入环境”,当变量离开环境时，将其标记为“离开环境”。垃圾收集器在运行的时候会给内存种所有的变量都加上标记，然后它会去掉环境中的变量，根据标记删除无用变量，回收它们占用的内存空间。<br>IE， Firefox,Opera,Chrome Safari的Javascript实现使用的是标记清除式的垃圾收集策略，垃圾收集的时间间隔不同。</li>
+<li>引用计数<br>引用计数的含义是跟踪记录每个值被引用的次用。当声明了一个变量并将一个引用类型值赋给该变量时，则这个值的引用次数就是1，如果同一个值又被赋给另一个变量，则该值的引用次数加1。相反，如果包含对这个值引用的变量又取得了另外一个值，则这个值的引用次数减1.当这个值的引用次数变成0时。当垃圾收集器运行时，释放引用次数为0的值所占用的内存。<br>引用计数的策略在循环引用的时候，会出现问题。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function problem()&#123;</div><div class="line">    var objA = new Object();</div><div class="line">    var objB  = new Object();</div><div class="line">    objA.someOther = objB;</div><div class="line">    objB.someOther = objA;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>当函数执行完成之后，objA,objB的引用次数都为2，垃圾回收器无法回收，如果这个函数被多次调用，就会导致大量内存得不到回收。为此，Netscape在Navigator4.0中放弃了引用计数的策略，使用标记清除的策略。<br>IE中有些对象不是原生的Javascript，其中BOM/DOM对象是使用C++以COM(Component Object Model, 组件对象模型)形式实现的。COM对象的垃圾收集策略采用的引用计数的方式，只要在IE中设计到COM，就会存在循环引用的问题。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var element = document.getElementById(&apos;some&apos;);</div><div class="line">var obj = new Object();</div><div class="line">obj.element = element;</div><div class="line">element.someobj = obj;</div></pre></td></tr></table></figure>
+<p>即使DOM中element元素被移除，element也不会被垃圾回收器回收。<br>为了避免类似这种循环引用的问题，最好在不使用它们的时候，手动断开连接<br>将变量值设为null,切断变量和它之前引用值的连接，当垃圾收集器下次运行时，就会删除这些值并回收它们的内存。<br>IE9中BOM/DOM对象都是原声的Javascript对象，避免了引用计数循环引用的问题，消除了常见内存泄漏的现象。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">obj.element = null;</div><div class="line">element.someobj = null;</div></pre></td></tr></table></figure>
+<ul>
+<li><p>内存管理<br>解除引用(dereferencing)：将其中设置为null来释放其引用，解除一个值的引用的作用是让值脱离执行环境，以便垃圾收集器下次运行时将其回收<br>分配给web浏览器的内存通常比一般的桌面应用程序少，出于安全的考虑，防止浏览器耗尽系统内存而崩溃。确保占用较少的内存，能保证页面的性能。<br>优化内存占用的最佳方式，执行的代码中只保存必要的数据。一旦数据不再有用，可以解除引用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function createPerson()&#123;</div><div class="line">    return &#123;</div><div class="line">        name:&apos;person&apos;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">var globalPerson = createPerson;</div><div class="line">//dereferencing</div><div class="line">globalPerson = null;</div></pre></td></tr></table></figure>
+</li>
+<li><p>内存溢出<br>程序申请内存时，没有足够的内存空间供其使用。</p>
+</li>
+<li>内存泄漏<br>是指程序申请内存后，又不能回收,无法释放已申请的内存空间,内存泄漏会降低页面性能，还可能会导致程序出错或浏览器崩溃。内存泄漏可能会导致内存溢出。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/04/11/closure/" data-id="cj2zlj59u0004hhx9hlrwegsn" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/04/19/sort/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Javascript排序算法
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/03/24/webpack/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">wepback学习笔记</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Emacs/">Emacs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Perl/">Perl</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Server/">Server</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vim/">Vim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/">mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/svn/">svn</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CSS/" style="font-size: 15px;">CSS</a> <a href="/tags/Emacs/" style="font-size: 10px;">Emacs</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Perl/" style="font-size: 10px;">Perl</a> <a href="/tags/Server/" style="font-size: 10px;">Server</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/algorithm/" style="font-size: 10px;">algorithm</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/05/22/jsEqualOperator/">Javascript相等操作符</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/22/cssMarginPaddingPercentage/">CSS margin/padding值的计算</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/10/mac-commandline/">mac-commandline</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/30/perlstart/">Perl入门</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/26/box-model/">box-model</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 marong<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

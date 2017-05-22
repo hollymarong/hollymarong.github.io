@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>prototype | marong blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="构造函数，原型，实例的关系：每个构造函数都有一个原型对象，原型对象都包含一个指向构造函数的指针，实例都包含一个指向原型对象的内部指针。原型链：一个对象的原型等于另一个对象的实例，此时原型对象将包含一个指向另一个原型的指针，层层递进，构成了实例与原型之间的链条，这就是原型链。继承：依靠原型链来实现的。  原型链继承很少单独使用缺点：最主要的问题来自包含引用类型值的原型会被所有实例共享;创建子类型的实">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="prototype">
+<meta property="og:url" content="http://yoursite.com/2017/04/24/prototype/index.html">
+<meta property="og:site_name" content="marong blog">
+<meta property="og:description" content="构造函数，原型，实例的关系：每个构造函数都有一个原型对象，原型对象都包含一个指向构造函数的指针，实例都包含一个指向原型对象的内部指针。原型链：一个对象的原型等于另一个对象的实例，此时原型对象将包含一个指向另一个原型的指针，层层递进，构成了实例与原型之间的链条，这就是原型链。继承：依靠原型链来实现的。  原型链继承很少单独使用缺点：最主要的问题来自包含引用类型值的原型会被所有实例共享;创建子类型的实">
+<meta property="og:updated_time" content="2017-05-09T02:05:09.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="prototype">
+<meta name="twitter:description" content="构造函数，原型，实例的关系：每个构造函数都有一个原型对象，原型对象都包含一个指向构造函数的指针，实例都包含一个指向原型对象的内部指针。原型链：一个对象的原型等于另一个对象的实例，此时原型对象将包含一个指向另一个原型的指针，层层递进，构成了实例与原型之间的链条，这就是原型链。继承：依靠原型链来实现的。  原型链继承很少单独使用缺点：最主要的问题来自包含引用类型值的原型会被所有实例共享;创建子类型的实">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">marong blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Less is more</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+  <a href="https://github.com/hollymarong"><img style="position: absolute; top: 0; right: 0; border: 0;z-index:2;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-prototype" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/24/prototype/" class="article-date">
+  <time datetime="2017-04-24T00:12:45.000Z" itemprop="datePublished">2017-04-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      prototype
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>构造函数，原型，实例的关系：每个构造函数都有一个原型对象，原型对象都包含一个指向构造函数的指针，实例都包含一个指向原型对象的内部指针。<br>原型链：一个对象的原型等于另一个对象的实例，此时原型对象将包含一个指向另一个原型的指针，层层递进，构成了实例与原型之间的链条，这就是原型链。<br>继承：依靠原型链来实现的。</p>
+<ol>
+<li><p>原型链继承<br>很少单独使用<br>缺点：最主要的问题来自包含引用类型值的原型会被所有实例共享;创建子类型的实例时，不能向超类型传递参数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">SuperType</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.colors = [<span class="string">'red'</span>, <span class="string">'blue'</span>, <span class="string">'green'</span>];</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">SubType</span>(<span class="params"></span>)</span>&#123;</div><div class="line">&#125;</div><div class="line">SubType.protoype = <span class="keyword">new</span> SuperType();</div><div class="line"><span class="keyword">var</span> instance1 = <span class="keyword">new</span> SubType();</div><div class="line">instance1.colors.push(<span class="string">'black'</span>);</div><div class="line"><span class="built_in">console</span>.log(<span class="string">'colors'</span>, instance1.colors); <span class="comment">//['red', 'blue', 'green', 'black']</span></div><div class="line"><span class="keyword">var</span> instance2 = <span class="keyword">new</span> SubType();</div><div class="line"><span class="built_in">console</span>.log(<span class="string">'colors'</span>, instance2.colors); <span class="comment">//['red', 'blue', 'green', 'black']</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>(经典继承)借用构造函数继承<br>很少单独使用<br>在子类构造函数的内部调用超类构造函数,解决引用类型共享的问题；可传递参数<br>缺点：无法实现函数的复用</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">SuperType</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = name;</div><div class="line">    <span class="keyword">this</span>.colors = [<span class="string">'red'</span>, <span class="string">'blue'</span>, <span class="string">'green'</span>];</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">SubType</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    SuperType.call(<span class="keyword">this</span>, name);</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> instance1 = <span class="keyword">new</span> SubType();</div><div class="line">instance1.colors.push(<span class="string">'black'</span>); <span class="comment">//['red', 'blue', 'green', 'black']</span></div><div class="line"><span class="built_in">console</span>.log(instance1);</div><div class="line"><span class="keyword">var</span> instance2 = <span class="keyword">new</span> SubType();</div><div class="line"><span class="built_in">console</span>.log(instance2);</div></pre></td></tr></table></figure>
+</li>
+<li><p>组合继承(原型链和借用构造函数的组合)<br>将原型链和借用构造函数的技术组合到一块，使用原型链实现对原型属性和方法的继承，通过借用构造行数来实现对实例属性的继承,既通过在原型上定义方法实现了函数复用，又能保证每个实例儿都有自己的属性<br>常用的继承模式<br>缺点： 无论什么情况下，都会调用两次超类型构造函数</p>
+</li>
+<li><p>原型式继承(同ECMAScript的Object.create)<br>基于已有的对象，借助原型创建新对象<br>应用场景：只想让一个对象与另一个对象保持类似的情况下。<br>缺点：包含引用类型的值会共享</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">```</div><div class="line">5. 寄生式继承</div><div class="line">创建一个仅用于封装继承过程的函数，任何能够返回新对象的函数都适用于此模式</div><div class="line">缺点：不能做到函数的复用</div><div class="line">```javascript</div></pre></td></tr></table></figure>
+</li>
+<li><p>寄生组合式继承<br>最常用的继承模式<br>借用构造函数来继承属性，通过原型链来继承方法。<br>与组合式继承相比,它只调用了一次SuperType构造行数，并且因此避免了在SubType.prototype上创建不必要的，多余的属性。寄生组合式继承是引用类型最理想的继承方式</p>
+<pre><code class="javascript">
+</code></pre>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/04/24/prototype/" data-id="cj2zlj5a8000lhhx9jv780g40" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/04/26/deepcopy/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          deepcopy
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/04/19/sort/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Javascript排序算法</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Emacs/">Emacs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Perl/">Perl</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Server/">Server</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vim/">Vim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/">mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/svn/">svn</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CSS/" style="font-size: 15px;">CSS</a> <a href="/tags/Emacs/" style="font-size: 10px;">Emacs</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Perl/" style="font-size: 10px;">Perl</a> <a href="/tags/Server/" style="font-size: 10px;">Server</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/algorithm/" style="font-size: 10px;">algorithm</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/05/22/jsEqualOperator/">Javascript相等操作符</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/22/cssMarginPaddingPercentage/">CSS margin/padding值的计算</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/10/mac-commandline/">mac-commandline</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/30/perlstart/">Perl入门</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/26/box-model/">box-model</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 marong<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

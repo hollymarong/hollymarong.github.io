@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>emacs-command | marong blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="info M-x info(C-h i) –&amp;gt;  Emacs lisp Intro  Shell eshell  Magit Magit is a full Git interface  快捷键 Ctrl-H t  Built in Tutorial Ctrl-x Ctrl-c  退出ecma Ctrl-v 翻到下一页 Alt-v 翻到上一页 Ctl-l 光标所在行的文字移动到中间，再次输入">
+<meta name="keywords" content="Emacs">
+<meta property="og:type" content="article">
+<meta property="og:title" content="emacs-command">
+<meta property="og:url" content="http://yoursite.com/2016/12/27/emacs-command/index.html">
+<meta property="og:site_name" content="marong blog">
+<meta property="og:description" content="info M-x info(C-h i) –&amp;gt;  Emacs lisp Intro  Shell eshell  Magit Magit is a full Git interface  快捷键 Ctrl-H t  Built in Tutorial Ctrl-x Ctrl-c  退出ecma Ctrl-v 翻到下一页 Alt-v 翻到上一页 Ctl-l 光标所在行的文字移动到中间，再次输入">
+<meta property="og:updated_time" content="2017-05-11T01:35:38.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="emacs-command">
+<meta name="twitter:description" content="info M-x info(C-h i) –&amp;gt;  Emacs lisp Intro  Shell eshell  Magit Magit is a full Git interface  快捷键 Ctrl-H t  Built in Tutorial Ctrl-x Ctrl-c  退出ecma Ctrl-v 翻到下一页 Alt-v 翻到上一页 Ctl-l 光标所在行的文字移动到中间，再次输入">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">marong blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Less is more</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+  <a href="https://github.com/hollymarong"><img style="position: absolute; top: 0; right: 0; border: 0;z-index:2;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-emacs-command" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/27/emacs-command/" class="article-date">
+  <time datetime="2016-12-27T02:47:18.000Z" itemprop="datePublished">2016-12-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      emacs-command
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="info"><a href="#info" class="headerlink" title="info"></a>info</h3><ul>
+<li>M-x info(C-h i) –&gt;  Emacs lisp Intro</li>
+</ul>
+<h2 id="Shell"><a href="#Shell" class="headerlink" title="Shell"></a>Shell</h2><ul>
+<li>eshell</li>
+</ul>
+<h2 id="Magit"><a href="#Magit" class="headerlink" title="Magit"></a>Magit</h2><ul>
+<li>Magit is a full Git interface</li>
+</ul>
+<h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><ul>
+<li>Ctrl-H t  Built in Tutorial</li>
+<li>Ctrl-x Ctrl-c  退出ecma</li>
+<li>Ctrl-v 翻到下一页</li>
+<li>Alt-v 翻到上一页</li>
+<li>Ctl-l 光标所在行的文字移动到中间，再次输入，移动到顶端，再次输入，移动到底端</li>
+<li>Ctrl-p 上一行</li>
+<li>Ctrl-n 下一行</li>
+<li>Ctrl-f 向右移动</li>
+<li>Ctrl-b 向左移动</li>
+<li>M-f  对英文以单词为单位向右移动，对中文以标点符号为单位向右移动</li>
+<li>M-b 对英文以单词为单位向左移动，对中文以标点符号为单位向左边移动</li>
+<li>Ctrl-a 移动到一行的头部</li>
+<li>Ctrl-e 移动到一行的尾部</li>
+<li>M-a 移动到一句的头部</li>
+<li>M-e 移动到一句的尾部</li>
+<li>M-&lt; 将光标移动到头部(Alt-Shift-&lt;)</li>
+<li>M-&gt; 将光标移动到尾部(Alt-Shift-&gt;)</li>
+<li>Ctrl-u-数字 Ctrl-f 将光标向右移动8个单词 </li>
+<li>Ctrl-u-8 m  –在当前光标下输入8个m</li>
+<li>Ctrl-g 用来终止命令   </li>
+<li>Ctrl-/|Ctrl_(Ctrl) 撤销命令</li>
+<li>Ctrl-d 删除贯标后的一个字符</li>
+<li>M-d 删除贯标后的一个单词</li>
+<li>M-del 删除光标前的一个单词</li>
+<li>del 删除高标前的一个字符</li>
+<li>Ctrl-k  移除从光标到行尾的字符</li>
+<li>M-k 移除从光标到行尾的字符</li>
+<li>Ctrl-@  移动到要删除的字符处 Ctrl+w</li>
+<li>Ctrl-y  粘贴</li>
+<li>M-x repl s<retrun>changed<return>altered<retrun></retrun></return></retrun></li>
+<li>C-h c C-p 查看C-p命令的简要说明</li>
+<li>C-h k C-p  在新视图中查看命令的详细说明</li>
+<li>C-h f 函数名 解释一个函数名</li>
+<li>C-h k 按键  查看快捷键</li>
+<li>C-h v </li>
+</ul>
+<h2 id="窗口"><a href="#窗口" class="headerlink" title="窗口"></a>窗口</h2><ul>
+<li>Ctrl-x-1  只保留一个窗口</li>
+<li>Ctrl-x-2  将屏幕垂直划分成两个窗格，光标停留在上方的窗格</li>
+</ul>
+<h2 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h2><ul>
+<li>Ctrl-x Ctrl-f 查找文件</li>
+<li>Ctrl-x Ctrl-s 存储文件</li>
+<li>创建新文件的方法，就是查找一个不存在的文件，然后保存</li>
+<li>Ctrl-x Ctrl-b 列出缓冲区</li>
+<li>Ctrl-x b+缓冲区的名字（按tab自动补全）  跳转到之前编辑的文件</li>
+<li>Ctrl-x s 保存多个缓冲区</li>
+<li>Ctrl-z 暂时离开emacs,不杀死emacs的进程</li>
+<li>Ctrl-s 向前搜索</li>
+<li>Ctrl-r 向后搜索</li>
+<li>M-x kill-buffer 从buffer list删除buffer文件</li>
+<li>M-x ibuffer 显示buffer list , D 删除buffer</li>
+<li>C-x C-e 执行lisp语句</li>
+</ul>
+<h3 id="批量重命名文件"><a href="#批量重命名文件" class="headerlink" title="批量重命名文件"></a>批量重命名文件</h3><ul>
+<li>C-x C-j 打开当前文件所在目录 Dired模式</li>
+<li>Shift+6 跳转到上级目录</li>
+<li>C-; iedit模式在dired模式下快捷键失效，启用重新绑定的M-s e</li>
+<li>C-x C-q 进入到dired模式的Editable编辑模式–&gt;C-=(选中要重命名的文件)–&gt;M-s e(同时编辑)-C-c C-c(编辑完成保存)</li>
+<li>C-c Esc 退出修改</li>
+</ul>
+<h3 id="搜索和替换"><a href="#搜索和替换" class="headerlink" title="搜索和替换"></a>搜索和替换</h3><ul>
+<li>search speed:ag(Linux)&gt;pt(所有平台)&gt;ack&gt;grep</li>
+<li>helm-ag 安装 </li>
+<li>M-x helm-do-ag-project-root &lt;字段 !需要屏蔽的字段&gt; –&gt; C-c C-e (打开buffer 能直接编辑搜索出的结果)</li>
+<li>C-c p s 快捷键绑定搜索</li>
+<li>C-c c-k 取消</li>
+</ul>
+<h3 id="helm-ag"><a href="#helm-ag" class="headerlink" title="helm-ag"></a>helm-ag</h3><ul>
+<li>搜索工具，linux下工具，在windows下需要Cygwin工具</li>
+<li>用babun安装,编译完成后把ag.exe放到bin下，添加环境变量<br>C:\Users\marong.babun\cygwin\bin<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$pact install libpcre-devel</div><div class="line">$pact install liblzma-devel</div><div class="line"></div><div class="line">$git clone https://github.com/ggreer/the_silver_searcher.git</div><div class="line"></div><div class="line">$cd the_silver_searcher</div><div class="line">$./build.sh</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="imenu"><a href="#imenu" class="headerlink" title="imenu"></a>imenu</h3><ul>
+<li>M-x imenu 列出函数列表，能列出lisp，不能列出js函数列表</li>
+<li>M-x counsel-imenu  能列出js函数列表</li>
+<li>M-s i：列出函数列表，调用counsel-imenu</li>
+</ul>
+<h3 id="flycheck-代码检查"><a href="#flycheck-代码检查" class="headerlink" title="flycheck 代码检查"></a>flycheck 代码检查</h3><ul>
+<li>只对js文件进行代码检查,windows系统不好用</li>
+<li>安装过程玩后报错require let-alist not　provided,在elpa文件下有let-alist的包，最后发现let-alist.el文件没有内容，卸载后重新下载后，flycheck能用了</li>
+<li><p>M-x flycheck-verify-setup</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(add-hook &apos;js2-mode-hook &apos;flycheck-mode)</div></pre></td></tr></table></figure>
+</li>
+<li><p>M-x flycheck-list-errors 开启一个新的buffer来展示错误，在buffer具体错误上回车，可以跳转到相应的代码</p>
+</li>
+</ul>
+<h3 id="evil-安装过程遇到的问题"><a href="#evil-安装过程遇到的问题" class="headerlink" title="evil 安装过程遇到的问题"></a>evil 安装过程遇到的问题</h3><ul>
+<li>安装evil后报错提示undo-tree goto-chg两个package未安装，分别安装两个packages</li>
+<li>M-x evil-mode找不到evil模式，重新卸载M-x package-list-packages –&gt; d –&gt; x 卸载之后，重新安装后，就能打开evil模式了</li>
+</ul>
+<h3 id="yasnippet"><a href="#yasnippet" class="headerlink" title="yasnippet"></a>yasnippet</h3><ul>
+<li>可以自定义</li>
+<li>al Tab —&gt; alert</li>
+<li>f Tab —&gt; function</li>
+<li>com Tab —&gt; /<em> </em>/</li>
+<li>log  Tab —&gt; console.log</li>
+</ul>
+<h3 id="auto-yasnippet"><a href="#auto-yasnippet" class="headerlink" title="auto-yasnippet"></a>auto-yasnippet</h3><ul>
+<li>M-x aya-create</li>
+<li>M-x aya-expand<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(add-to-list~AAA path~AAA name~AAA)</div><div class="line">M-x aya-create</div><div class="line">M-x aya-expand</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="模式"><a href="#模式" class="headerlink" title="模式"></a>模式</h2><ul>
+<li>Ctrl—x text-mode</li>
+<li>M-x fundamental-mode 缺省模式</li>
+<li>M-x auto-fill-mode 自动换行模式</li>
+<li>设置自动换行边界数字：Ctrl-u 70 Ctrl-x f</li>
+<li>M-x linum-mode 设置行号</li>
+<li>M-x recentf-mode 该模式保存最近打开的文件</li>
+</ul>
+<h3 id="Org-Mode"><a href="#Org-Mode" class="headerlink" title="Org Mode"></a>Org Mode</h3><ul>
+<li>Tab 展开/关闭</li>
+<li>C-c C-t Todo/Done/None切换</li>
+<li>M-Return 自动排序号</li>
+<li>&lt;s Tab 自动补全 #+BEGIN_SRC #+END_SRC</li>
+<li>C-c C-s 设置日程开始时间</li>
+<li>C-c C-s 设置日程结束时间</li>
+<li>C-c C-c 保存</li>
+<li>C-x C-e 导出html/LaTex(PDF)格式 –&gt; ho(导出html，并打开)</li>
+<li>M-x org-capture –&gt;t–&gt;新建TODO事项</li>
+<li>C-c a s  搜索日程</li>
+</ul>
+<h3 id="org-pomodoro"><a href="#org-pomodoro" class="headerlink" title="org-pomodoro"></a>org-pomodoro</h3><ul>
+<li>时间管理工具</li>
+<li>安装完成后需要require</li>
+<li>在gtd.org里C-c a –&gt;打开agenda–&gt; 在一个gtd里输入M-x org-pomodoro—&gt;在状态栏里就能看到时间管理</li>
+</ul>
+<h3 id="Occur模式"><a href="#Occur模式" class="headerlink" title="Occur模式"></a>Occur模式</h3><ul>
+<li>搜索模式</li>
+<li>M-s o &lt;搜索内容&gt;</li>
+<li>回车跳转到搜索的地方</li>
+<li>C-x o在搜索的buffer和popwin之间切换</li>
+<li>M-x occur-edit-mode(e)  能直接在搜索结果里进行修改</li>
+<li>增强occurmode，M-s o能直接抓取光标所在的单词，或选中的字段</li>
+</ul>
+<h3 id="web-mode"><a href="#web-mode" class="headerlink" title="web-mode"></a>web-mode</h3><ul>
+<li>M-x customize-group –&gt; web-mode –&gt; 定制</li>
+<li>C-h v web-mode-markup-indent-offset 查看html 当前缩进值</li>
+<li>C-c t i 切换当前缩进值2/4</li>
+<li>C-M \ 整个buffer缩进</li>
+<li>M-; toggle 注释</li>
+</ul>
+<h3 id="js2-refactor"><a href="#js2-refactor" class="headerlink" title="js2-refactor"></a>js2-refactor</h3><ul>
+<li>提取函数:选中重构的函数，C-c C-m –&gt; ef</li>
+<li>提取方法函数：C-c C-m –&gt; em</li>
+<li>提取本地变量为函数参数： C-c C-m –&gt; ip</li>
+<li>提取函数参数为函数内变量： C-c C—m –&gt;lp</li>
+</ul>
+<h3 id="Dired模式"><a href="#Dired模式" class="headerlink" title="Dired模式"></a>Dired模式</h3><ul>
+<li>Dired模式下可以拷贝、删除、重命名文件</li>
+</ul>
+<ul>
+<li>C-x d &lt;文件&gt; 显示制定文件夹下文件详情 大小、时间等</li>
+<li><ul>
+<li>创建文件夹和文件，回车进入新建的文件夹里    </li>
+</ul>
+</li>
+<li>C-x C-f : create file</li>
+<li>g: refresh dired buffer</li>
+<li>C: copy file  </li>
+<li>D: delete file</li>
+<li>d: mark delete file </li>
+<li>u: cancle mark </li>
+<li>x: execute</li>
+<li>R: rename filename<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//能打开当文件所在的目录C-x C-j</div><div class="line">(required &apos;dired-x)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="expand-region"><a href="#expand-region" class="headerlink" title="expand-region"></a>expand-region</h3><ul>
+<li>C-= 能选中光标所在单词，按=逐级往外扩展选中</li>
+</ul>
+<h3 id="iedit"><a href="#iedit" class="headerlink" title="iedit"></a>iedit</h3><ul>
+<li>M-x iedit-mode 定位光标所在的单词，同时编辑多个区域</li>
+<li>C-; 绑定的快捷键 多编辑toggle</li>
+<li>M-s o (搜索内容) -&gt; e 进入过occur编辑模式 —&gt;C-=(expand-region) 选中要编辑单词 -&gt; M-s e 编辑多个区域</li>
+</ul>
+<h3 id="evil"><a href="#evil" class="headerlink" title="evil"></a>evil</h3><ol>
+<li>vim 80% 的功能</li>
+<li>the difference between Normal and Emacs state<ul>
+<li>C-u vim中向上翻页 Emacs中Universal args， 设置之后Ctrl-u/d 可以上下翻页了</li>
+</ul>
+</li>
+<li>evil state<ul>
+<li>evil normal state</li>
+<li>evil insert state</li>
+<li>evil visual state</li>
+<li>evil motion state</li>
+<li>evil operator state</li>
+</ul>
+</li>
+<li>C-z(M-x evil-emacs-state) toggle between Normal and Emacs state</li>
+</ol>
+<h3 id="evil-leader"><a href="#evil-leader" class="headerlink" title="evil-leader"></a>evil-leader</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">(evil-leader/set-key</div><div class="line">  &quot;e&quot; &apos;find-file</div><div class="line">  &quot;b&quot; &apos;switch-to-buffer</div><div class="line">  &quot;k&quot; &apos;kill-buffer)</div></pre></td></tr></table></figure>
+<h3 id="window-numbering"><a href="#window-numbering" class="headerlink" title="window-numbering"></a>window-numbering</h3><ul>
+<li>M-<num> 窗口跳转</num></li>
+</ul>
+<h3 id="powerline"><a href="#powerline" class="headerlink" title="powerline"></a>powerline</h3><ul>
+<li>增强mode-bar</li>
+</ul>
+<h3 id="evil-surround"><a href="#evil-surround" class="headerlink" title="evil-surround"></a>evil-surround</h3><ul>
+<li>viw S “|’ 给单词加上双引号</li>
+<li>cs ‘“ 把单引号换成双引号</li>
+<li>cs “(  把双引号换成括号，如果按9上的(会有空格</li>
+<li>cs “) 把双引号换成括号，如果按0上的）不会有空格</li>
+</ul>
+<h3 id="evil-nerd-commenter"><a href="#evil-nerd-commenter" class="headerlink" title="evil-nerd-commenter"></a>evil-nerd-commenter</h3><ul>
+<li>M;  注释切换</li>
+<li>V jk –&gt; M;</li>
+<li>gv 选择上次选中的区域，M; –&gt;取消注释</li>
+</ul>
+<h3 id="use-package"><a href="#use-package" class="headerlink" title="use-package"></a>use-package</h3><ul>
+<li>更安全的require<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">  ;;  会报错</div><div class="line">  (require &apos;xxx)  </div><div class="line">  ;; 不会报错</div><div class="line">(use-package xxx)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>###spacemacs</p>
+<ul>
+<li>直接glone 到d:/Emacs24.4/.emacs.d目录</li>
+<li>安装初始化选项，在安装的过程中</li>
+<li>spc+f+j 打开当前文件所在的目录</li>
+<li>spc+qq 退出emacs</li>
+<li>SPC-f-e-R  安装包</li>
+<li>SPC-f-e-d 打开.spacemacs.d/init.el</li>
+<li>SPC-f-e-i 打开.emacs.d/init.el</li>
+<li>SPC-f-e-r 安装包</li>
+<li>SPC-h-SPC <layer> 查看layer安装的packages</layer></li>
+<li>Ctrl-s 搜索</li>
+<li>M-x (SPC-SPC)命令</li>
+<li>C-h f查看lisp函数定义的文档</li>
+<li>C-h v查看lisp的变量</li>
+<li>C-h C-f 查看函数</li>
+<li>SPC-s-j 查看函数列表文件</li>
+<li>SPC-h-l  查看安装的elpa package文件</li>
+<li>SPC-h-r 查看spacemacs全部文档</li>
+<li>SPC-h-R 查看spacemacs 安装包的文档</li>
+<li>SPC-f-f find file</li>
+<li>SPC-f-j dired mode</li>
+<li>SPC-o-y  有道搜索单词</li>
+<li>,-d-m-e 展开宏函数,q退出宏函数</li>
+<li>SPC-<num> 窗口间的跳转</num></li>
+<li>SPC-w-d 删除打开的窗口</li>
+<li>SPC-p-f 查找项目下的文件</li>
+<li>SPC-f-f　查找当前项目下的文件夹</li>
+<li>SPC-f-L  查找本地文件</li>
+<li>SPC-J-= 格式化全文</li>
+<li>C-h 返回上级目录</li>
+</ul>
+<ul>
+<li>insert 模式下<ul>
+<li>C-a 移动到行首</li>
+<li>C-w 移动到行尾</li>
+</ul>
+</li>
+</ul>
+<h3 id="spacemacs-文件操作"><a href="#spacemacs-文件操作" class="headerlink" title="spacemacs 文件操作"></a>spacemacs 文件操作</h3><ul>
+<li>SPC-p-f 查找当前文件下的目录</li>
+<li>SPC-f-L 查找整个系统的文件</li>
+<li>SPC-f-l</li>
+<li>SPC-f-o 使用外部程序打开文件</li>
+<li>SPC-f-E sudo-edit 以root权限编辑文件host</li>
+<li>SPC-f-d 删除当前文件及buffer</li>
+<li>SPC-f-j 打开当前buffer的dired目录</li>
+<li>SPC-f-r　打开当前常用的文件</li>
+<li>SPC-f-R 重命名当前文件</li>
+<li>SPC-f-v 给当前项目设置lisp的变量</li>
+<li>SPC-f-y 查看当前buffer的路径并复制</li>
+<li>SPC-f-e-d 打开/.spacemacs.d/init.el文件</li>
+<li>SPC-f-e-i 打开/.emacs.d/init.el 文件</li>
+<li>SPC-f-c copy file</li>
+<li>SPC-f-b　jump bookmark</li>
+<li>SPC-f-s 保存当前buffer</li>
+<li>SPC-f-S 保存所有的buffer</li>
+</ul>
+<h3 id="spacemacs-buffer-操作"><a href="#spacemacs-buffer-操作" class="headerlink" title="spacemacs buffer 操作"></a>spacemacs buffer 操作</h3><ul>
+<li>SPC-b-. 显示buffer操作提示n/p切换buffer</li>
+<li>SPC-b-b 查找buffer</li>
+<li>SPC-b-d 删除buffer<h4 id="spacemacs-创建自己的layer"><a href="#spacemacs-创建自己的layer" class="headerlink" title="spacemacs 创建自己的layer"></a>spacemacs 创建自己的layer</h4></li>
+</ul>
+<h3 id="2048game"><a href="#2048game" class="headerlink" title="2048game"></a>2048game</h3><ul>
+<li>C-z  切换Normal–&gt; Emacs state</li>
+</ul>
+<h3 id="Tips-and-Tricks"><a href="#Tips-and-Tricks" class="headerlink" title="Tips and Tricks"></a>Tips and Tricks</h3><ul>
+<li>Use “Search” instead of cursor movement</li>
+</ul>
+<ul>
+<li>Ctrl-S and word to jump to </li>
+<li>Alt-N to jump to same word cursor is on</li>
+<li>F13 to jump to a character </li>
+</ul>
+<ul>
+<li>Repeat a command with a prefixed number, i.e.<ul>
+<li>Alt-9 Alt-B to jump back 9 words</li>
+<li>Ctrl-5 Ctrl-P to jump up 5 lines</li>
+<li>linum-relative mode is helpful</li>
+</ul>
+</li>
+</ul>
+<h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3><ul>
+<li>Evil:EvilVim 模拟器</li>
+<li>Options/Manage Emacs Packages/Company/install<ul>
+<li>安装完成之后，在文件中开启M-x company-mode 打开自动补全功能 M-n M-p上下选择要补全的内容</li>
+<li>M-x global-company-mode 打开的任何文件都会自动补全</li>
+</ul>
+</li>
+<li>换color theme <ul>
+<li>M-x load-theme monokai</li>
+</ul>
+</li>
+</ul>
+<h2 id="packages"><a href="#packages" class="headerlink" title="packages"></a>packages</h2><ul>
+<li>M-x package-list-packages === Options/Manage Emacs Packages(因为init.el中添加了melpa源，packagelist 里有3000多个包)</li>
+<li>选择要安装的包，光标放在要安装的包上，i</li>
+<li>取消选择包，光标放在要取消的包上，u</li>
+<li>搜索包，C-s 包名</li>
+<li>选择要删除的包，光标放在要删除的包上，d</li>
+<li>执行命令，x</li>
+<li>更新所有的packages, U</li>
+</ul>
+<h3 id="custorm-group"><a href="#custorm-group" class="headerlink" title="custorm-group"></a>custorm-group</h3><ul>
+<li>修改插件配置<ul>
+<li>M-x customize-group</li>
+<li>js2-mode</li>
+<li>external-varialable 点击向下的箭头</li>
+<li>修改颜色为darkgrey</li>
+<li>点击state -&gt; Save for future sessions</li>
+<li>q 退出 </li>
+<li>未定义的js变量为灰色</li>
+<li>在init.el 最后面，多了一行<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">(custom-set-faces</div><div class="line">    &apos;(js2-external-variable ((t (:foreground &quot;dark gray&quot;))))</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="nodejs-repl"><a href="#nodejs-repl" class="headerlink" title="nodejs-repl"></a>nodejs-repl</h3><p>M-x nodejs-repl<br>,sb 运行当前buffer的代码</p>
+<h3 id="smex-安装步骤"><a href="#smex-安装步骤" class="headerlink" title="smex 安装步骤"></a>smex 安装步骤</h3><ul>
+<li>在d:/Emacs24.4/.emacs.d/init.el中包列表中加入smex</li>
+<li>增加M-x的插件，C-s切换选项<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//加载</div><div class="line">(require &apos;smex) ; Not needed if you use package.el</div><div class="line">(smex-initialize) ; Can be omitted. This might cause a (minimal) delay</div><div class="line">                  ; when Smex is auto-initialized on its first run.</div><div class="line">//配置快捷键</div><div class="line">(global-set-key (kbd &quot;M-x&quot;) &apos;smex)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="swiper-插件的安装"><a href="#swiper-插件的安装" class="headerlink" title="swiper 插件的安装"></a>swiper 插件的安装</h3><ul>
+<li>在d:/Emacs24.4/.emacs.d/init.el中包列表中加入swiper</li>
+<li>配置完快捷键后，发现与counsel有关的函数不能执行</li>
+<li>用M-x package-list-packages 重新安装的counsel</li>
+</ul>
+<h2 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h2><p>– emacs –debug-init<br>– emacs -Q<br>    – 这样Emacs就不会加载任何配置文件， 你可以对比Emacs默认的行为来判断是否真的是因为配置文件引起的问题。</p>
+<h2 id="mac-下安装步骤"><a href="#mac-下安装步骤" class="headerlink" title="mac 下安装步骤"></a>mac 下安装步骤</h2><p>brew install emacs –with-cocoa –with-gnutls<br>ln -s /usr/local/Cellar/emacs/25.3/Emacs.app /Applications </p>
+<h2 id="windows下安装步骤"><a href="#windows下安装步骤" class="headerlink" title="windows下安装步骤"></a>windows下安装步骤</h2><ul>
+<li>到这个网址可以下载到Emacs的windows版本：<a href="http://ftp.gnu.org/pub/gnu/emacs/windows/" target="_blank" rel="external">http://ftp.gnu.org/pub/gnu/emacs/windows/</a></li>
+<li>双击bin文件夹里的addpm.exe进行安装</li>
+<li>在D创建文件夹Emacs24.4</li>
+<li><ul>
+<li>为了方便全局调用，请添加bin路径到环境变量（比如我的，D:\Emacs24.4\bin）。</li>
+</ul>
+</li>
+<li><p>在cmd里，输入emacs -nw，以终端模式来运行emacs；只输入emacs，以GUI模式来运行</p>
+</li>
+<li><p>启动emacs，用鼠标点击Options菜单，随便点击一两个选项，比如点击一下Active Region Highlighting，然后点击Save Options,这样做的目的是让emacs自动创建.emacs.d目录以及.emacs文件</p>
+</li>
+<li>在Emacs窗口的最后一行，显示Wrote C:\Users\marong\AppData\Roaming.emacs</li>
+</ul>
+<h3 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h3><ul>
+<li>windows 下flycheck不太兼容</li>
+<li><p>tern libray　not found </p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//window 下</div><div class="line">npm install -g tern</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>macos ，在.spacemacs.d/init.el的user-init里添加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">(setenv &quot;PATH&quot; (concat (getenv &quot;PATH&quot;) &quot;:/Users/marong/.nvm/versions/node/v7.10.0/bin&quot;))</div><div class="line">(setq exec-path (append exec-path &apos;(&quot;/Users/marong/.nvm/versions/node/v7.10.0/bin&quot;)))</div></pre></td></tr></table></figure></p>
+<h3 id="国内镜像"><a href="#国内镜像" class="headerlink" title="国内镜像"></a>国内镜像</h3><ul>
+<li>用清华的镜像稳定一点，elpachina不太稳定<br>1.popkit<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">(setq package-archives</div><div class="line">          &apos;((&quot;popkit&quot; . &quot;http://elpa.popkit.org/packages/&quot;)))</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>2.elpachina<br><a href="http://elpa.emacs-china.org/" target="_blank" rel="external">http://elpa.emacs-china.org/</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">(setq package-archives &apos;((&quot;gnu&quot;   . &quot;http://elpa.emacs-china.org/gnu/&quot;)</div><div class="line">                         (&quot;melpa&quot; . &quot;http://elpa.emacs-china.org/melpa/&quot;)))</div></pre></td></tr></table></figure></p>
+<h3 id="elisp-emacs-lisp"><a href="#elisp-emacs-lisp" class="headerlink" title="elisp(emacs lisp)"></a>elisp(emacs lisp)</h3><ul>
+<li>写elisp </li>
+</ul>
+<ul>
+<li>导航栏里/Buffers/<em>scratch</em>   默认开启Lisp Interaction mode</li>
+</ul>
+<ul>
+<li>一般计算表达</li>
+</ul>
+<ul>
+<li>输入(+ 2 2)  — C-x C-e  在最下面提示4</li>
+<li>输入;2 +3*4 回车之后 输入内容居中 </li>
+<li>C-h m  查看当前模式 内容居中的原因是开启了electric-indent mode</li>
+<li>M-x electric-indent-mode 关闭该模式</li>
+<li>重新输入; 2 + 3 * 4 — 分号是注释的意思</li>
+<li>(+ 2 (* 3 4)  —&gt;C-x C-e  —&gt;结果14</li>
+</ul>
+<ul>
+<li>设置变量</li>
+</ul>
+<ul>
+<li>设置变量(setq my-name “marong”) C-x C-e</li>
+<li>输出变量(message my-name) C-x C-e</li>
+</ul>
+<ul>
+<li>设置函数<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">(defun my-func()   //没有变量</div><div class="line">    //定义成交互式函数，就能M-x my-func</div><div class="line">    (interactive)</div><div class="line">    (message &quot;hello, %s&quot; my-name))  //%s加上是为了输入my-name</div><div class="line">(my-func)</div><div class="line"></div><div class="line">//为my-func函数执行绑定快捷键</div><div class="line">(global-set-key (kbd &quot;&lt;f2&gt;&quot;) &apos;my-func)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>M-x eval-buffer 执行整个buffer文件<h3 id="macro"><a href="#macro" class="headerlink" title="macro"></a>macro</h3></li>
+</ul>
+<ul>
+<li>可以生成代码的代码</li>
+</ul>
+<h3 id="markdown编辑"><a href="#markdown编辑" class="headerlink" title="markdown编辑"></a>markdown编辑</h3><p>1.markdown中写表格|name|age|gender -&gt;回车 -&gt;生成表格<br>2.Tab 切换表格单元格<br>3.Shfit-Tab 切换到上一个单元格</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/12/27/emacs-command/" data-id="cj2zlj5a00009hhx9j2z30ftf" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Emacs/">Emacs</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/02/21/git-mutilssh/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          git生成多个ssh配置
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/11/13/vim-command/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">vim-command</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Emacs/">Emacs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Perl/">Perl</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Server/">Server</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vim/">Vim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/">mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/svn/">svn</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CSS/" style="font-size: 15px;">CSS</a> <a href="/tags/Emacs/" style="font-size: 10px;">Emacs</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Perl/" style="font-size: 10px;">Perl</a> <a href="/tags/Server/" style="font-size: 10px;">Server</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/algorithm/" style="font-size: 10px;">algorithm</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/05/22/jsEqualOperator/">Javascript相等操作符</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/22/cssMarginPaddingPercentage/">CSS margin/padding值的计算</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/10/mac-commandline/">mac-commandline</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/30/perlstart/">Perl入门</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/26/box-model/">box-model</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 marong<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
