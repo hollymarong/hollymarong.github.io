@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/05/22/jsEqualOperator/index.html">
 <meta property="og:site_name" content="marong blog">
 <meta property="og:description" content="相等操作符分为两种，一种是相等(==)和不相等(!=)，另一种是全等(===)和不全等(!==)。相等和不相等操作符进行比较的时候，如果数据类型不相同，会强制类型转换，再进行比较全等和不全等操作符进行比较的时候，不会进行类型转换，直接比较 不同数据类型转换规则  布尔值转换为0或1 字符串和数字比较，字符串会转化为数字 对象和其他类型比较，对象会调用valueOf或toString方法，得到的基本">
-<meta property="og:updated_time" content="2017-05-22T06:04:54.000Z">
+<meta property="og:updated_time" content="2017-05-22T06:09:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Javascript相等操作符">
 <meta name="twitter:description" content="相等操作符分为两种，一种是相等(==)和不相等(!=)，另一种是全等(===)和不全等(!==)。相等和不相等操作符进行比较的时候，如果数据类型不相同，会强制类型转换，再进行比较全等和不全等操作符进行比较的时候，不会进行类型转换，直接比较 不同数据类型转换规则  布尔值转换为0或1 字符串和数字比较，字符串会转化为数字 对象和其他类型比较，对象会调用valueOf或toString方法，得到的基本">
@@ -109,13 +109,13 @@
 </thead>
 <tbody>
 <tr>
-<td>null == undefind</td>
+<td>null == undefined</td>
 <td>true</td>
 <td></td>
 </tr>
 <tr>
 <td>NaN == NaN</td>
-<td>true</td>
+<td>false</td>
 <td>NaN不等于NaN</td>
 </tr>
 <tr>
@@ -124,12 +124,12 @@
 <td>false转换为0</td>
 </tr>
 <tr>
-<td>1 = true</td>
+<td>1 == true</td>
 <td>true</td>
 <td>true转换为1</td>
 </tr>
 <tr>
-<td>2 = true</td>
+<td>2 == true</td>
 <td>true</td>
 <td>true转换为1, 1不等于2</td>
 </tr>
@@ -146,7 +146,7 @@
 <tr>
 <td>[] == 0</td>
 <td>true</td>
-<td></td>
+<td>[]调用toString转化为””,””字符串转换为0</td>
 </tr>
 <tr>
 <td>{} == false</td>

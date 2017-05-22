@@ -109,13 +109,13 @@
 </thead>
 <tbody>
 <tr>
-<td>null == undefind</td>
+<td>null == undefined</td>
 <td>true</td>
 <td></td>
 </tr>
 <tr>
 <td>NaN == NaN</td>
-<td>true</td>
+<td>false</td>
 <td>NaN不等于NaN</td>
 </tr>
 <tr>
@@ -124,12 +124,12 @@
 <td>false转换为0</td>
 </tr>
 <tr>
-<td>1 = true</td>
+<td>1 == true</td>
 <td>true</td>
 <td>true转换为1</td>
 </tr>
 <tr>
-<td>2 = true</td>
+<td>2 == true</td>
 <td>true</td>
 <td>true转换为1, 1不等于2</td>
 </tr>
@@ -146,7 +146,7 @@
 <tr>
 <td>[] == 0</td>
 <td>true</td>
-<td></td>
+<td>[]调用toString转化为””,””字符串转换为0</td>
 </tr>
 <tr>
 <td>{} == false</td>
