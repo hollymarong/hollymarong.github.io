@@ -5,17 +5,17 @@
   
   <title>Javascript相等操作符 | marong blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="技术学习总结">
+  <meta name="description" content="相等操作符分为两种，一种是相等(==)和不相等(!=)，另一种是全等(===)和不全等(!==)。相等和不相等操作符进行比较的时候，如果数据类型不相同，会强制类型转换，再进行比较全等和不全等操作符进行比较的时候，不会进行类型转换，直接比较 不同数据类型转换规则  布尔值转换为0或1 字符串和数字比较，字符串会转化为数字 对象和其他类型比较，对象会调用valueOf或toString方法，得到的基本">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Javascript相等操作符">
 <meta property="og:url" content="http://yoursite.com/2017/05/22/jsEqualOperator/index.html">
 <meta property="og:site_name" content="marong blog">
-<meta property="og:description" content="技术学习总结">
-<meta property="og:updated_time" content="2017-05-22T03:53:40.000Z">
+<meta property="og:description" content="相等操作符分为两种，一种是相等(==)和不相等(!=)，另一种是全等(===)和不全等(!==)。相等和不相等操作符进行比较的时候，如果数据类型不相同，会强制类型转换，再进行比较全等和不全等操作符进行比较的时候，不会进行类型转换，直接比较 不同数据类型转换规则  布尔值转换为0或1 字符串和数字比较，字符串会转化为数字 对象和其他类型比较，对象会调用valueOf或toString方法，得到的基本">
+<meta property="og:updated_time" content="2017-05-22T06:04:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Javascript相等操作符">
-<meta name="twitter:description" content="技术学习总结">
+<meta name="twitter:description" content="相等操作符分为两种，一种是相等(==)和不相等(!=)，另一种是全等(===)和不全等(!==)。相等和不相等操作符进行比较的时候，如果数据类型不相同，会强制类型转换，再进行比较全等和不全等操作符进行比较的时候，不会进行类型转换，直接比较 不同数据类型转换规则  布尔值转换为0或1 字符串和数字比较，字符串会转化为数字 对象和其他类型比较，对象会调用valueOf或toString方法，得到的基本">
   
   
     <link rel="icon" href="/favicon.png">
@@ -89,7 +89,105 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>相等操作符分为两种，一种是相等(==)和不相等(!=)，另一种是全等(===)和不全等(!==)。<br>相等和不相等操作符进行比较的时候，如果数据类型不相同，会强制类型转换，再进行比较<br>全等和不全等操作符进行比较的时候，不会进行类型转换，直接比较</p>
+<p>不同数据类型转换规则</p>
+<ul>
+<li>布尔值转换为0或1</li>
+<li>字符串和数字比较，字符串会转化为数字</li>
+<li>对象和其他类型比较，对象会调用valueOf或toString方法，得到的基本类型值，按照之前转化规则进行转化后，比较</li>
+<li>null和undefined是相等的, null和undefined不会转化为其他类型值</li>
+<li>NaN 不等于NaN</li>
+<li>如果两个对象比较，如果两个对象指向同一个对象，则相等，否则，不相等</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>值</th>
+<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>null == undefind</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>NaN == NaN</td>
+<td>true</td>
+<td>NaN不等于NaN</td>
+</tr>
+<tr>
+<td>0 == false</td>
+<td>true</td>
+<td>false转换为0</td>
+</tr>
+<tr>
+<td>1 = true</td>
+<td>true</td>
+<td>true转换为1</td>
+</tr>
+<tr>
+<td>2 = true</td>
+<td>true</td>
+<td>true转换为1, 1不等于2</td>
+</tr>
+<tr>
+<td>[] == false</td>
+<td>true</td>
+<td>[]调用toString转化为””,””字符串转换为0</td>
+</tr>
+<tr>
+<td>[1] == 1</td>
+<td>true</td>
+<td>[1]调用toString转化为”1”,”1”字符串转换为1</td>
+</tr>
+<tr>
+<td>[] == 0</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>{} == false</td>
+<td>false</td>
+<td>{}调用toString-&gt;”[object Object]”-&gt;NaN,false-&gt;0</td>
+</tr>
+<tr>
+<td>{} == “[object Object]”</td>
+<td>true</td>
+<td>{}调用toString转换为”[object Object]”,</td>
+</tr>
+<tr>
+<td>{} == 0</td>
+<td>false</td>
+<td></td>
+</tr>
+<tr>
+<td>{} == false</td>
+<td>false</td>
+<td>{}调用toString-&gt;”[object Object]”-&gt;NaN, NaN==0</td>
+</tr>
+<tr>
+<td>{} == {}</td>
+<td>false</td>
+<td>两个对象,分别保存在不同的内存地址中</td>
+</tr>
+<tr>
+<td>[] == []</td>
+<td>false</td>
+<td>两个对象，分别保存在不同的内存地址中</td>
+</tr>
+<tr>
+<td>[1] == [1]</td>
+<td>false</td>
+<td>两个对象,分别保存在不用的内存地址中</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">    <span class="attr">toString</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">10</span>;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line">obj == <span class="number">10</span> <span class="comment">//true</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">    <span class="attr">valueOf</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">20</span>;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line">obj == <span class="number">20</span> <span class="comment">// true</span></div><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">    <span class="attr">toString</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">10</span>;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">valueOf</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">20</span>;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line">obj == <span class="number">20</span> <span class="comment">//true</span></div></pre></td></tr></table></figure>
+<p>由此可见，对象会先调用valueOf试图转换成基本类型值, 如转换不成会再尝试调用toString方法。</p>
+
       
     </div>
     <footer class="article-footer">
