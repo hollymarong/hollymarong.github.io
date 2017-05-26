@@ -217,7 +217,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/22/cssMarginPaddingPercentage/">CSS margin/padding值的计算</a>
+      <a class="article-title" href="/2017/05/22/cssMarginPaddingPercentage/">CSS中百分比值</a>
     </h1>
   
 
@@ -225,7 +225,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <ul>
+<li>line-height</li>
+<li>定位中的百分比<br>如果top|bottom|left|right的值为百分比<br>top|bottom根据包含块的高度计算百分比的值<br>left|right根据包含块的宽度计算百分比的值</li>
+<li>margin|padding<br>行内元素margin|padding值,左右能设置，上下不能设置<br>如果元素的padding或margin值是百分比值，那么，它的值是根据父元素的宽度来计算的<br>可以利用此属性，用css实现自适应的正方形</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">//方案一:利用padding-top</div><div class="line">.square&#123;</div><div class="line">  width:100%;</div><div class="line">  padding-top:100%;</div><div class="line">  background:#000;</div><div class="line">&#125;</div><div class="line">//方案二:利用伪类</div><div class="line">.square3&#123;</div><div class="line">  width:20%;</div><div class="line">  background:yellow;</div><div class="line">&#125;</div><div class="line">.square3:after&#123;</div><div class="line">  content:'';</div><div class="line">  display:block;</div><div class="line">  padding-top:100%;</div><div class="line">&#125;</div><div class="line">.square4&#123;</div><div class="line">  width:20%;</div><div class="line">  background:green;</div><div class="line">  overflow:hidden;</div><div class="line">&#125;</div><div class="line">.square4:after&#123;</div><div class="line">  content:'';</div><div class="line">  display:block;</div><div class="line">  margin-top:100%;</div><div class="line">&#125;</div><div class="line">//方案三:利用vw单位</div><div class="line">.square&#123;</div><div class="line">  width:100vw;</div><div class="line">  height:100vw;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">width</span>=<span class="string">'2000px'</span> <span class="attr">height</span>=<span class="string">'2000px'</span> /&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">//1.页面中这三个元素的宽高是多少，img能把a标签撑起来么，为什么</div><div class="line">//2.img设置position:absolute; top:10%;left:10%; img的位置，top/left的百分比是基于谁的</div><div class="line">//3.如果p设置position:relative;img的position:absolute; top:10%;left:10%; img的位置，top/left的百分比是基于谁的</div></pre></td></tr></table></figure>
+
       
     </div>
     <footer class="article-footer">
@@ -264,10 +271,15 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="mac-os"><a href="#mac-os" class="headerlink" title="mac os"></a>mac os</h2><p>| keybinding           | operate                |<br>| command+Q            | 退出当前应用           |<br>| command+M            | 最小化当前应用         |<br>| command+T            | 切换当前窗口打开的应用 |<br>| command+H            | 快速隐藏当前应用       |<br>| command+Shift+Delete | 清除废纸篓             |<br>| Control + A          | 移动到行首             |<br>| Control + E          | 移动到行尾             |<br>| Control + B          | 向前移动一个字符       |<br>| Control + F          | 向后移动一个字符       |</p>
-<h2 id="mac-command-line"><a href="#mac-command-line" class="headerlink" title="mac command-line"></a>mac command-line</h2><p>which tern //查看安装路径</p>
+<h2 id="mac-command-line"><a href="#mac-command-line" class="headerlink" title="mac command-line"></a>mac command-line</h2><p>which tern //查看安装路径<br>top //显示所有进程<br>kill -9 pid //结束pid进程</p>
 <h2 id="curl"><a href="#curl" class="headerlink" title="curl"></a>curl</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -O http://.../.tar.gizp //下载文件到当前目录</div></pre></td></tr></table></figure>
 <h2 id="terminal"><a href="#terminal" class="headerlink" title="terminal"></a>terminal</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cp -r fromPath/file destinationPath</div><div class="line">cp ~/test1/*.*  ~/test2/</div></pre></td></tr></table></figure>
+<p>echo ‘eval “$(perl -I$HOME/lib/lib/perl5 -Mlocal::lib=$HOME/lib)”‘ &gt;&gt;~/.bashrc<br>echo ‘eval “$(perl -I$HOME/lib/lib/perl5 -Mlocal::lib=$HOME/lib)”‘ &gt;&gt;~/.zshrc</p>
 <h2 id="chrome"><a href="#chrome" class="headerlink" title="chrome"></a>chrome</h2><p>| keybinding          | operate                  |<br>| command + Shift + T | 重新打开之前关闭的标签页 |<br>| command+ Option+I   | devtools                 |<br>| command + ,         | chrome 设置              |<br>| command + L         | 快速选中地址栏                  |</p>
+<h2 id="alfred"><a href="#alfred" class="headerlink" title="alfred"></a>alfred</h2><ul>
+<li>安装github</li>
+</ul>
+<p>下载workflow工作流，双击安装工作流，自动添加的alfred<br>生成一个token<br>gh-auth <your token=""></your></p>
 
       
     </div>
@@ -314,8 +326,17 @@
 <li><p>运行文件</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">perl hello.pl</div></pre></td></tr></table></figure>
 </li>
+<li><p>常用命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">perldoc CGI //查看CGI模块文档</div><div class="line">cpan <span class="_">-a</span> //列出所有已安装的模块</div></pre></td></tr></table></figure>
+</li>
+<li><p>mac os下安装local::lib模块</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">// 先从seach.cpan.org下载local::lib模块</div><div class="line">//进入local-lib的安装包</div><div class="line">cd local-lib-2.000019/</div><div class="line">//默认安装到~/perl5</div><div class="line">perl Makefile.PL --bootstrap </div><div class="line">make test &amp;&amp; make install</div><div class="line">perl5 -Mlocal::lib=$HOME/lib)&quot;&apos; &gt;&gt;~/.zshrc</div><div class="line">echo &apos;eval &quot;$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)&quot;&apos; &gt;&gt;~/.zshrc</div><div class="line">//重启shell</div></pre></td></tr></table></figure>
+</li>
+<li><p>使用模块</p>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">my</span> $name = <span class="string">"/usr/local/bin/perl/marong"</span>;</div><div class="line"><span class="keyword">my</span> $basename = basename $name;</div><div class="line"><span class="keyword">my</span> $dirname = dirname $name;</div><div class="line"><span class="keyword">print</span> <span class="string">"\$basename:$basename"</span>; <span class="regexp">//marong</span></div><div class="line"><span class="keyword">print</span> <span class="string">"\$dirname:$dirname"</span>; <span class="regexp">//</span><span class="string">'/usr/local/bin/perl'</span></div></pre></td></tr></table></figure>
+</li>
 </ul>
-<h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2>
+
       
     </div>
     <footer class="article-footer">
@@ -1173,8 +1194,6 @@
 <li>M-k 移除从光标到行尾的字符</li>
 <li>Ctrl-@  移动到要删除的字符处 Ctrl+w</li>
 <li>Ctrl-y  粘贴</li>
-<li>M-x repl s<retrun>changed<return>altered<retrun></retrun></return></retrun></li>
-<li>C-h c C-p 查看C-p命令的简要说明</li>
 <li>C-h k C-p  在新视图中查看命令的详细说明</li>
 <li>C-h f 函数名 解释一个函数名</li>
 <li>C-h k 按键  查看快捷键</li>
@@ -1364,6 +1383,7 @@
 <li>安装初始化选项，在安装的过程中</li>
 <li>spc+f+j 打开当前文件所在的目录</li>
 <li>spc+qq 退出emacs</li>
+<li>SPC-b-f  在finder中打开文件</li>
 <li>SPC-f-e-R  安装包</li>
 <li>SPC-f-e-d 打开.spacemacs.d/init.el</li>
 <li>SPC-f-e-i 打开.emacs.d/init.el</li>
@@ -2395,7 +2415,7 @@ git commit -a -m &apos;first commit&apos;
           </li>
         
           <li>
-            <a href="/2017/05/22/cssMarginPaddingPercentage/">CSS margin/padding值的计算</a>
+            <a href="/2017/05/22/cssMarginPaddingPercentage/">CSS中百分比值</a>
           </li>
         
           <li>

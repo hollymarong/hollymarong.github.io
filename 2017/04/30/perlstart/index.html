@@ -5,17 +5,17 @@
   
   <title>Perl入门 | marong blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="perl程序文件可以不带扩展名字，也可以plx为扩展名 查看perl的版本号 1perl -v  运行文件 1perl hello.pl   正则表达式">
+  <meta name="description" content="perl程序文件可以不带扩展名字，也可以plx为扩展名 查看perl的版本号 1perl -v  运行文件 1perl hello.pl  常用命令 12perldoc CGI //查看CGI模块文档cpan -a //列出所有已安装的模块  mac os下安装local::lib模块 123456789// 先从seach.cpan.org下载local::lib模块//进入local-lib">
 <meta name="keywords" content="Perl">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Perl入门">
 <meta property="og:url" content="http://yoursite.com/2017/04/30/perlstart/index.html">
 <meta property="og:site_name" content="marong blog">
-<meta property="og:description" content="perl程序文件可以不带扩展名字，也可以plx为扩展名 查看perl的版本号 1perl -v  运行文件 1perl hello.pl   正则表达式">
-<meta property="og:updated_time" content="2017-05-21T03:03:20.000Z">
+<meta property="og:description" content="perl程序文件可以不带扩展名字，也可以plx为扩展名 查看perl的版本号 1perl -v  运行文件 1perl hello.pl  常用命令 12perldoc CGI //查看CGI模块文档cpan -a //列出所有已安装的模块  mac os下安装local::lib模块 123456789// 先从seach.cpan.org下载local::lib模块//进入local-lib">
+<meta property="og:updated_time" content="2017-05-26T02:09:39.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Perl入门">
-<meta name="twitter:description" content="perl程序文件可以不带扩展名字，也可以plx为扩展名 查看perl的版本号 1perl -v  运行文件 1perl hello.pl   正则表达式">
+<meta name="twitter:description" content="perl程序文件可以不带扩展名字，也可以plx为扩展名 查看perl的版本号 1perl -v  运行文件 1perl hello.pl  常用命令 12perldoc CGI //查看CGI模块文档cpan -a //列出所有已安装的模块  mac os下安装local::lib模块 123456789// 先从seach.cpan.org下载local::lib模块//进入local-lib">
   
   
     <link rel="icon" href="/favicon.png">
@@ -97,8 +97,17 @@
 <li><p>运行文件</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">perl hello.pl</div></pre></td></tr></table></figure>
 </li>
+<li><p>常用命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">perldoc CGI //查看CGI模块文档</div><div class="line">cpan <span class="_">-a</span> //列出所有已安装的模块</div></pre></td></tr></table></figure>
+</li>
+<li><p>mac os下安装local::lib模块</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">// 先从seach.cpan.org下载local::lib模块</div><div class="line">//进入local-lib的安装包</div><div class="line">cd local-lib-2.000019/</div><div class="line">//默认安装到~/perl5</div><div class="line">perl Makefile.PL --bootstrap </div><div class="line">make test &amp;&amp; make install</div><div class="line">perl5 -Mlocal::lib=$HOME/lib)&quot;&apos; &gt;&gt;~/.zshrc</div><div class="line">echo &apos;eval &quot;$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)&quot;&apos; &gt;&gt;~/.zshrc</div><div class="line">//重启shell</div></pre></td></tr></table></figure>
+</li>
+<li><p>使用模块</p>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">my</span> $name = <span class="string">"/usr/local/bin/perl/marong"</span>;</div><div class="line"><span class="keyword">my</span> $basename = basename $name;</div><div class="line"><span class="keyword">my</span> $dirname = dirname $name;</div><div class="line"><span class="keyword">print</span> <span class="string">"\$basename:$basename"</span>; <span class="regexp">//marong</span></div><div class="line"><span class="keyword">print</span> <span class="string">"\$dirname:$dirname"</span>; <span class="regexp">//</span><span class="string">'/usr/local/bin/perl'</span></div></pre></td></tr></table></figure>
+</li>
 </ul>
-<h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2>
+
       
     </div>
     <footer class="article-footer">
@@ -180,7 +189,7 @@
           </li>
         
           <li>
-            <a href="/2017/05/22/cssMarginPaddingPercentage/">CSS margin/padding值的计算</a>
+            <a href="/2017/05/22/cssMarginPaddingPercentage/">CSS中百分比值</a>
           </li>
         
           <li>

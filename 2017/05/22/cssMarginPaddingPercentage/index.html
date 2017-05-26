@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>CSS margin/padding值的计算 | marong blog</title>
+  <title>CSS中百分比值 | marong blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="技术学习总结">
+  <meta name="description" content="line-height 定位中的百分比如果top|bottom|left|right的值为百分比top|bottom根据包含块的高度计算百分比的值left|right根据包含块的宽度计算百分比的值 margin|padding行内元素margin|padding值,左右能设置，上下不能设置如果元素的padding或margin值是百分比值，那么，它的值是根据父元素的宽度来计算的可以利用此属性，用">
 <meta name="keywords" content="CSS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS margin&#x2F;padding值的计算">
+<meta property="og:title" content="CSS中百分比值">
 <meta property="og:url" content="http://yoursite.com/2017/05/22/cssMarginPaddingPercentage/index.html">
 <meta property="og:site_name" content="marong blog">
-<meta property="og:description" content="技术学习总结">
-<meta property="og:updated_time" content="2017-05-22T02:52:43.000Z">
+<meta property="og:description" content="line-height 定位中的百分比如果top|bottom|left|right的值为百分比top|bottom根据包含块的高度计算百分比的值left|right根据包含块的宽度计算百分比的值 margin|padding行内元素margin|padding值,左右能设置，上下不能设置如果元素的padding或margin值是百分比值，那么，它的值是根据父元素的宽度来计算的可以利用此属性，用">
+<meta property="og:updated_time" content="2017-05-22T23:34:56.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS margin&#x2F;padding值的计算">
-<meta name="twitter:description" content="技术学习总结">
+<meta name="twitter:title" content="CSS中百分比值">
+<meta name="twitter:description" content="line-height 定位中的百分比如果top|bottom|left|right的值为百分比top|bottom根据包含块的高度计算百分比的值left|right根据包含块的宽度计算百分比的值 margin|padding行内元素margin|padding值,左右能设置，上下不能设置如果元素的padding或margin值是百分比值，那么，它的值是根据父元素的宽度来计算的可以利用此属性，用">
   
   
     <link rel="icon" href="/favicon.png">
@@ -81,7 +81,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      CSS margin/padding值的计算
+      CSS中百分比值
     </h1>
   
 
@@ -89,7 +89,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <ul>
+<li>line-height</li>
+<li>定位中的百分比<br>如果top|bottom|left|right的值为百分比<br>top|bottom根据包含块的高度计算百分比的值<br>left|right根据包含块的宽度计算百分比的值</li>
+<li>margin|padding<br>行内元素margin|padding值,左右能设置，上下不能设置<br>如果元素的padding或margin值是百分比值，那么，它的值是根据父元素的宽度来计算的<br>可以利用此属性，用css实现自适应的正方形</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">//方案一:利用padding-top</div><div class="line">.square&#123;</div><div class="line">  width:100%;</div><div class="line">  padding-top:100%;</div><div class="line">  background:#000;</div><div class="line">&#125;</div><div class="line">//方案二:利用伪类</div><div class="line">.square3&#123;</div><div class="line">  width:20%;</div><div class="line">  background:yellow;</div><div class="line">&#125;</div><div class="line">.square3:after&#123;</div><div class="line">  content:'';</div><div class="line">  display:block;</div><div class="line">  padding-top:100%;</div><div class="line">&#125;</div><div class="line">.square4&#123;</div><div class="line">  width:20%;</div><div class="line">  background:green;</div><div class="line">  overflow:hidden;</div><div class="line">&#125;</div><div class="line">.square4:after&#123;</div><div class="line">  content:'';</div><div class="line">  display:block;</div><div class="line">  margin-top:100%;</div><div class="line">&#125;</div><div class="line">//方案三:利用vw单位</div><div class="line">.square&#123;</div><div class="line">  width:100vw;</div><div class="line">  height:100vw;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">width</span>=<span class="string">'2000px'</span> <span class="attr">height</span>=<span class="string">'2000px'</span> /&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">//1.页面中这三个元素的宽高是多少，img能把a标签撑起来么，为什么</div><div class="line">//2.img设置position:absolute; top:10%;left:10%; img的位置，top/left的百分比是基于谁的</div><div class="line">//3.如果p设置position:relative;img的position:absolute; top:10%;left:10%; img的位置，top/left的百分比是基于谁的</div></pre></td></tr></table></figure>
+
       
     </div>
     <footer class="article-footer">
@@ -171,7 +178,7 @@
           </li>
         
           <li>
-            <a href="/2017/05/22/cssMarginPaddingPercentage/">CSS margin/padding值的计算</a>
+            <a href="/2017/05/22/cssMarginPaddingPercentage/">CSS中百分比值</a>
           </li>
         
           <li>
