@@ -3,17 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>归档: 2017/4 | marong blog</title>
+  <title>HTML5 Element类别和内容模型 | marong blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="技术学习总结">
-<meta property="og:type" content="website">
-<meta property="og:title" content="marong blog">
-<meta property="og:url" content="http://yoursite.com/archives/2017/04/index.html">
+  <meta name="description" content="DOM中元素继承HTMLElement自定义的元素继承HTMLUnknowElement元素定义包含：  类别(categories)HTML中元素被分成不同的种类，有metadata content,flow content,sectioning content,headingcontent,phrasing content,embedded content,interactive conten">
+<meta name="keywords" content="HTML5 Element">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML5 Element类别和内容模型">
+<meta property="og:url" content="http://yoursite.com/2017/06/03/html-element/index.html">
 <meta property="og:site_name" content="marong blog">
-<meta property="og:description" content="技术学习总结">
+<meta property="og:description" content="DOM中元素继承HTMLElement自定义的元素继承HTMLUnknowElement元素定义包含：  类别(categories)HTML中元素被分成不同的种类，有metadata content,flow content,sectioning content,headingcontent,phrasing content,embedded content,interactive conten">
+<meta property="og:updated_time" content="2017-06-03T07:59:53.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="marong blog">
-<meta name="twitter:description" content="技术学习总结">
+<meta name="twitter:title" content="HTML5 Element类别和内容模型">
+<meta name="twitter:description" content="DOM中元素继承HTMLElement自定义的元素继承HTMLUnknowElement元素定义包含：  类别(categories)HTML中元素被分成不同的种类，有metadata content,flow content,sectioning content,headingcontent,phrasing content,embedded content,interactive conten">
   
   
     <link rel="icon" href="/favicon.png">
@@ -65,134 +67,58 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/04/30/perlstart/" class="archive-article-date">
-  <time datetime="2017-04-30T10:23:48.000Z" itemprop="datePublished">4月 30</time>
+        <section id="main"><article id="post-html-element" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/03/html-element/" class="article-date">
+  <time datetime="2017-06-03T04:16:40.000Z" itemprop="datePublished">2017-06-03</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/30/perlstart/">Perl入门</a>
+    <h1 class="article-title" itemprop="name">
+      HTML5 Element类别和内容模型
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/04/26/box-model/" class="archive-article-date">
-  <time datetime="2017-04-26T06:29:45.000Z" itemprop="datePublished">4月 26</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/26/box-model/">box-model</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/04/26/deepcopy/" class="archive-article-date">
-  <time datetime="2017-04-26T06:29:23.000Z" itemprop="datePublished">4月 26</time>
-</a>
+        <p>DOM中元素继承HTMLElement<br>自定义的元素继承HTMLUnknowElement<br>元素定义包含：</p>
+<ul>
+<li>类别(categories)<br>HTML中元素被分成不同的种类，有metadata content,flow content,sectioning content,headingcontent,phrasing content,embedded content,interactive content<br>metadata content:<br>元数据内容是设置描述或其他内容的行为，或设置文档和其他文档的关系，或传递信息。<br><base>,<link>,<meta>,<noscript>,<script>,<style>,<template>,<title><br>flow content:<br>大多数元素都属于flow content<br>sectioning content:<br>分节内容是定义headings和footers范围<br>article,aside,nav,section<br>heading content:<br>h1,h2,h3,h4,h5,h6<br>phrasing content:<br>定义文档的文本<br>phrasing content只能包含phrasing content分类的内容，不能是其他的flow content类型<br><a>,<area>,<audio>,<b>,<br>,<button>,<canvas>,<code>,<data>,<datalist>,<del>,<em>,<embed>,<i>,<iframe>,<img>,<input>,<ins>,<label>,<map>,<noscript>,<object>,<output>,<picture>,<progress>,<q>,<s>,<script>,<select>,<small>,<span>,<strong>,<sub>,<sup>,<svg>,<template>,<textarea>,<video><br>embedded content:<br>引入其他资源到文档中<br><audio>,<canvas>,<embed>,<iframe>,<img>,<math>,<object>,<picture>,<svg>,<video><br>interactive content:<br>特地用来用户交互的内容<br><a>,<audio>,<button>,<embed>,<iframe>,<img>,<input>,<label>,<textarea>,<video><br>palpable content<br>它的内容模型允许有至少一个flow content或phrasing content，它的内容都是显而易见的，没有隐藏的属性。<br>这并不是一个硬性的要求，在一些情况下内容可以为空，比如作为占位符出现随后脚本填充，或者是作为模板的一般分，在大多数页面中是有内容的，但在一些也页面中没有。<br><a>,<address>,<article>,<audio>,<b>,<blockquote>,<button>,<canvas>,<code>,<data>,<detail>,<div>,<dl>,<em>,<embed>,<fieldset>,<figure>,<footer>,<form>,<h1>,<h2>,<h3>,<h4>,<h5>,<h6>,<header>,<i>,<iframe>,<img>,<input>,<ins>,<label>,<main>,<nav>,<ol>,<p>,<q><s>,<section>,<select>,<small>,<span>,<strong>,<sub>,<svg>,<table>,<textarea>,<ul>,<video><br>script-supporting elements<br>不呈现内容，用来加载脚本，或为用户提供功能<br><script>,<template></li>
+<li>内容模型(content-model):<br>所期望的内容类型，所能包含的子元素或后代元素的内容类型<br>有一些content-model为空的元素，可以省略end tag，如：<link>,<img>,<input>,<base>,<hr>,<meta>,<source><br>transparent<br><a>,<ins>,<map>,<param>,<object><br>一些元素的内容模型是transparent，transparent元素的内容模型取决它的父元素。<br>当一个transparent的元素没有父元素，它可以接受任意flow content元素<br><a><div></div></a><br>上面这种嵌套是合法的，a的content-model为transparent,div的categories为flow content，所以合法<br><p><a><div></div></a></p><br>上面这种嵌套是不合法的，<br>p元素的content-model是phrasing contet，a元素类别是phrasing content, 所以p内嵌套a<br>a元素的content-model是transparent，对于div的是否能嵌套需要看父元素p是否能嵌套div，p元素只能嵌套Phrasing content的元素，显然不能嵌套div.<br>它的content-model是transparent<br>元素查看地址：<a href="https://html.spec.whatwg.org/#the-a-element">https://html.spec.whatwg.org/#the-a-element</a><br>| element | categories                                                         | content model    |<br>| —     | —                                                                | —              |<br>| p       | Flow content Palpable content                                      | Phrasing content |<br>| a       | Flow content Phrasing content interactive content Palpable content | transparent      |<br>| div     | Flow content Palpable content                                      | flow content     |</li>
+</ul>
+</script></noscript></li></ul>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/26/deepcopy/">deepcopy</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/04/24/prototype/" class="archive-article-date">
-  <time datetime="2017-04-24T00:12:45.000Z" itemprop="datePublished">4月 24</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/06/03/html-element/" data-id="cj3gznrwd0009x9fyt9dg111m" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/24/prototype/">prototype</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/04/19/sort/" class="archive-article-date">
-  <time datetime="2017-04-19T10:46:36.000Z" itemprop="datePublished">4月 19</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/19/sort/">Javascript排序算法</a>
-    </h1>
-  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML5-Element/">HTML5 Element</a></li></ul>
 
-    </header>
+    </footer>
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/04/11/closure/" class="archive-article-date">
-  <time datetime="2017-04-10T23:50:36.000Z" itemprop="datePublished">4月 11</time>
-</a>
-      
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/11/closure/">闭包</a>
-    </h1>
   
+    <a href="/2017/05/27/vuestart/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Vue2.0入门使用</div>
+    </a>
+  
+</nav>
 
-    </header>
-  </div>
+  
 </article>
-  
-  
-    </div></section>
-  
 
 </section>
         
