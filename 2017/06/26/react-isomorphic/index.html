@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>React同构 | marong blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="同构React组件既可以在浏览器端渲染，也可以在服务器端渲染产生HTML，代码可以运行在不同的环境下，这种方式叫“同构”  服务端渲染对于来自浏览器的HTTP请求，服务器通过访问存储器或者访问别的API服务等方式获得数据，然后根据数据渲染生成HTML返回给浏览器，浏览器只需要把HTML渲染出来。    优点利于SEO加速首屏渲染大多数情况下，服务器获取数据比浏览器端获取数据要快 缺点页面大小对性">
+<meta name="keywords" content="React">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React同构">
+<meta property="og:url" content="http://yoursite.com/2017/06/26/react-isomorphic/index.html">
+<meta property="og:site_name" content="marong blog">
+<meta property="og:description" content="同构React组件既可以在浏览器端渲染，也可以在服务器端渲染产生HTML，代码可以运行在不同的环境下，这种方式叫“同构”  服务端渲染对于来自浏览器的HTTP请求，服务器通过访问存储器或者访问别的API服务等方式获得数据，然后根据数据渲染生成HTML返回给浏览器，浏览器只需要把HTML渲染出来。    优点利于SEO加速首屏渲染大多数情况下，服务器获取数据比浏览器端获取数据要快 缺点页面大小对性">
+<meta property="og:updated_time" content="2017-06-29T04:40:46.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React同构">
+<meta name="twitter:description" content="同构React组件既可以在浏览器端渲染，也可以在服务器端渲染产生HTML，代码可以运行在不同的环境下，这种方式叫“同构”  服务端渲染对于来自浏览器的HTTP请求，服务器通过访问存储器或者访问别的API服务等方式获得数据，然后根据数据渲染生成HTML返回给浏览器，浏览器只需要把HTML渲染出来。    优点利于SEO加速首屏渲染大多数情况下，服务器获取数据比浏览器端获取数据要快 缺点页面大小对性">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">marong blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Less is more</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+  <a href="https://github.com/hollymarong"><img style="position: absolute; top: 0; right: 0; border: 0;z-index:2;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-react-isomorphic" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/26/react-isomorphic/" class="article-date">
+  <time datetime="2017-06-26T11:48:30.000Z" itemprop="datePublished">2017-06-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      React同构
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><p>同构<br>React组件既可以在浏览器端渲染，也可以在服务器端渲染产生HTML，代码可以运行在不同的环境下，这种方式叫“同构”</p>
+</li>
+<li><p>服务端渲染<br>对于来自浏览器的HTTP请求，服务器通过访问存储器或者访问别的API服务等方式获得数据，然后根据数据渲染生成HTML返回给浏览器，浏览器只需要把HTML渲染出来。</p>
+</li>
+</ul>
+<ul>
+<li>优点<br>利于SEO<br>加速首屏渲染<br>大多数情况下，服务器获取数据比浏览器端获取数据要快</li>
+<li>缺点<br>页面大小对性能的影响，如果服务器端产生的HTML过大，首页下载的HTML要比纯浏览器渲染要大，这样下载HTML的时间会增长，服务器渲染未必能获得更好的性能</li>
+</ul>
+<ul>
+<li>浏览器端渲染<br>服务器返回的HTML只包含几个无内容的元素作为页面框架，网页中引用的JavaScript会直接访问API服务器来获取数据，取到的数据再结合模板来生成HTML字符串，插入到页面框架总，产生了用户最终看到的界面。<br>模板库的效率并不是很高，用户需要等待API请求成功之后才能看到第一条内容，反而让用户感觉更慢了，并没有提高用户体验。</li>
+<li>完全浏览器渲染技术</li>
+</ul>
+<ul>
+<li>各种应用框架,包含路由和应用结构功能</li>
+<li>模板库</li>
+<li><p>服务器端的API支持<br>传统的模板库就是DOM树的操作，将HTML字符串插入到网页中，无论如何优化都有它的极限。<br>React的Virtual DOM工作原理，配合生命周期函数的应用，性能不是字符串替换的模板库能够比拟的。<br>完全浏览器渲染的缺点：<br>首页性能,首页加载白屏问题<br>不利于SEO</p>
+</li>
+<li><p>React同构</p>
+</li>
+</ul>
+<p>用户第一请求页面时候，node服务端做初始渲染，node服务端接受到请求后，把需要用的HTML渲染成HTML字符串，返回给客户端，之后，客户端接管渲染的控制权限</p>
+<ul>
+<li><p>NODE服务端渲染<br>Redux在客户端提供应用初始所需的state,客户端把服务端返回的state作为初始的state<br>发送响应前用ReactDOMServer.renderToString(el)渲染初始的HTML,渲染时会计算所生成HTML的校验和，并存放在根节点的属性data-react-checksum中<br>服务端最后一步就是把初始组件的HTML和初始state注入到客户端能够渲染的模板中。<br>state的传递通过script标签来吧preloadedState赋给window.<strong>INITIAL_STATE</strong><br>注入js bundle文件<br>客户端就可以通过window.<strong>INITITIAL</strong>STATE__来获取preloadedState,</p>
+</li>
+<li><p>浏览器客户端渲染<br>从window.<strong>INITIAL_STATE</strong>得到初始的state，并传递给createStore()<br>页面加载js后，打包JS启动，调用React.render()重新渲染一遍React组件，在重新计算DOM树之后，也会计算一遍校验和，和服务器的校验和做一个对比，如果二者相同，就没有必要做DOM操作了。然后会与服务端渲染的HTML的data-react-id属性做关联。这会把新生成的React实例与服务端的虚拟DOM连接起来。因为同样适用了来自Redux Store的初始state,并且view组件代码是一样的，结果就是我们得到了相同的DOM</p>
+</li>
+</ul>
+<p>如果服务器端渲染和浏览器端渲染产生的内容不一致，用户会先看到服务器端渲染的内容，浏览器端生成的DOM树，覆盖掉服务器产生的HTML,用户会看到一次闪烁。<br>实现同构一定要保正服务器端和浏览器段渲染的结果一致。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/06/26/react-isomorphic/" data-id="cj4hy1peo000qdwx9w8eeknor" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/06/23/iterm2/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">iterm2</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Emacs/">Emacs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVVM-Vue/">MVVM Vue</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mobile/">Mobile</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Perl/">Perl</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Server/">Server</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vim/">Vim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/">mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/svn/">svn</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CSS/" style="font-size: 15px;">CSS</a> <a href="/tags/Emacs/" style="font-size: 10px;">Emacs</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/MVVM-Vue/" style="font-size: 10px;">MVVM Vue</a> <a href="/tags/Mobile/" style="font-size: 10px;">Mobile</a> <a href="/tags/Perl/" style="font-size: 10px;">Perl</a> <a href="/tags/React/" style="font-size: 15px;">React</a> <a href="/tags/Server/" style="font-size: 10px;">Server</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/algorithm/" style="font-size: 15px;">algorithm</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/06/26/react-isomorphic/">React同构</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/23/iterm2/">iterm2</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/18/node-debug/">NodeJs调试</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/16/react-start/">react 入门</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/12/iterm-commandline/">iterm-commandline</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 marong<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
