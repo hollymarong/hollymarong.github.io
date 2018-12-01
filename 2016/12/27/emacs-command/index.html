@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/12/27/emacs-command/index.html">
 <meta property="og:site_name" content="marong blog">
 <meta property="og:description" content="info M-x info(C-h i) –&amp;gt;  Emacs lisp Intro  Shell eshell  Magit Magit is a full Git interface  快捷键 Ctrl-H t  Built in Tutorial Ctrl-x Ctrl-c  退出ecma Ctrl-v 翻到下一页 Alt-v 翻到上一页 Ctl-l 光标所在行的文字移动到中间，再次输入">
-<meta property="og:updated_time" content="2017-06-23T10:20:18.000Z">
+<meta property="og:updated_time" content="2018-12-01T03:11:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="emacs-command">
 <meta name="twitter:description" content="info M-x info(C-h i) –&amp;gt;  Emacs lisp Intro  Shell eshell  Magit Magit is a full Git interface  快捷键 Ctrl-H t  Built in Tutorial Ctrl-x Ctrl-c  退出ecma Ctrl-v 翻到下一页 Alt-v 翻到上一页 Ctl-l 光标所在行的文字移动到中间，再次输入">
@@ -164,9 +164,11 @@
 <li>M-x helm-do-ag-project-root &lt;字段 !需要屏蔽的字段&gt; –&gt; C-c C-e (打开buffer 能直接编辑搜索出的结果)</li>
 <li>C-c p s 快捷键绑定搜索</li>
 <li>C-c c-k 取消</li>
-<li>报错Error running time helm-ag–do-ag-cand..,是因为没有安装ag<h3 id="安装ag"><a href="#安装ag" class="headerlink" title="安装ag"></a>安装ag</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">brew install the_silver_searcher</div><div class="line">ag --version</div></pre></td></tr></table></figure>
+<li>报错Error running time helm-ag–do-ag-cand..,是因为没有安装ag</li>
+<li>项目下全局搜索和替换<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SPC s a f --&gt; &lt;keyword&gt; ---&gt; C-c C-e 能编辑接口 ---&gt; C-c C-c 提交修改</div></pre></td></tr></table></figure>
 </li>
 </ul>
+<h3 id="安装ag"><a href="#安装ag" class="headerlink" title="安装ag"></a>安装ag</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">brew install the_silver_searcher</div><div class="line">ag --version</div></pre></td></tr></table></figure>
 <h3 id="helm-ag"><a href="#helm-ag" class="headerlink" title="helm-ag"></a>helm-ag</h3><ul>
 <li>搜索工具，linux下工具，在windows下需要Cygwin工具</li>
 <li>用babun安装,编译完成后把ag.exe放到bin下，添加环境变量<br>C:\Users\marong.babun\cygwin\bin<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$pact install libpcre-devel</div><div class="line">$pact install liblzma-devel</div><div class="line"></div><div class="line">$git clone https://github.com/ggreer/the_silver_searcher.git</div><div class="line"></div><div class="line">$cd the_silver_searcher</div><div class="line">$./build.sh</div></pre></td></tr></table></figure>
@@ -178,7 +180,14 @@
 <li>M-s i：列出函数列表，调用counsel-imenu</li>
 </ul>
 <h3 id="flycheck-代码检查"><a href="#flycheck-代码检查" class="headerlink" title="flycheck 代码检查"></a>flycheck 代码检查</h3><ul>
-<li>只对js文件进行代码检查,windows系统不好用</li>
+<li><p>安装全局的eslint</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">npm install -g eslint</div><div class="line">//配置文件~/.eslintrc</div><div class="line">//找到一个js文件，flycheck-verify-setup --&gt; javascript-eslint --&gt; 就会看到eslint打开了</div><div class="line">// M-x flycheck-mode就能看到错误提示</div></pre></td></tr></table></figure>
+</li>
+<li><p>使用项目中安装和配置的eslint</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">SPC e S(flycheck-set-checker-executable)--&gt; javascript-eslint --&gt; 项目下/node_modules/eslint/bin/eslint </div><div class="line">--&gt; M-x flycheck-mode就能看到错误提示</div></pre></td></tr></table></figure>
+</li>
+<li><p>只对js文件进行代码检查,windows系统不好用</p>
+</li>
 <li>安装过程玩后报错require let-alist not　provided,在elpa文件下有let-alist的包，最后发现let-alist.el文件没有内容，卸载后重新下载后，flycheck能用了</li>
 <li><p>M-x flycheck-verify-setup</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(add-hook &apos;js2-mode-hook &apos;flycheck-mode)</div></pre></td></tr></table></figure>
@@ -240,6 +249,9 @@
 <li>M-x occur-edit-mode(e)  能直接在搜索结果里进行修改</li>
 <li>增强occurmode，M-s o能直接抓取光标所在的单词，或选中的字段</li>
 </ul>
+<ul>
+<li>SPC o d 搜索光标所在单词</li>
+</ul>
 <h3 id="web-mode"><a href="#web-mode" class="headerlink" title="web-mode"></a>web-mode</h3><ul>
 <li>M-x customize-group –&gt; web-mode –&gt; 定制</li>
 <li>C-h v web-mode-markup-indent-offset 查看html 当前缩进值</li>
@@ -274,10 +286,12 @@
 </ul>
 <h3 id="expand-region"><a href="#expand-region" class="headerlink" title="expand-region"></a>expand-region</h3><ul>
 <li>C-= 能选中光标所在单词，按=逐级往外扩展选中</li>
+<li>SPC v</li>
 </ul>
 <h3 id="iedit"><a href="#iedit" class="headerlink" title="iedit"></a>iedit</h3><ul>
 <li>M-x iedit-mode 定位光标所在的单词，同时编辑多个区域</li>
 <li>C-; 绑定的快捷键 多编辑toggle</li>
+<li>M-s . (搜索光标所在的单词), C-s 正向查找， C-r反向查找</li>
 <li>M-s o (搜索内容) -&gt; e 进入过occur编辑模式 —&gt;C-=(expand-region) 选中要编辑单词 -&gt; M-s e 编辑多个区域</li>
 </ul>
 <h3 id="evil"><a href="#evil" class="headerlink" title="evil"></a>evil</h3><ol>
@@ -308,6 +322,7 @@
 <li>cs ‘“ 把单引号换成双引号</li>
 <li>cs “(  把双引号换成括号，如果按9上的(会有空格</li>
 <li>cs “) 把双引号换成括号，如果按0上的）不会有空格</li>
+<li>SPC v s </li>
 </ul>
 <h3 id="evil-nerd-commenter"><a href="#evil-nerd-commenter" class="headerlink" title="evil-nerd-commenter"></a>evil-nerd-commenter</h3><ul>
 <li>M;  注释切换</li>
@@ -513,11 +528,12 @@
 <h3 id="对齐问题"><a href="#对齐问题" class="headerlink" title="对齐问题"></a>对齐问题</h3><p>不同mode对齐缩进需要单独设置<br>2/4空格的切换：,ti =&gt; SPC = j</p>
 <h3 id="email-邮箱设置"><a href="#email-邮箱设置" class="headerlink" title="email 邮箱设置"></a>email 邮箱设置</h3><p>设置邮箱的发送方式:send mail</p>
 <h3 id="打开光标坐在路径文件open-file-path-under-cursor"><a href="#打开光标坐在路径文件open-file-path-under-cursor" class="headerlink" title="打开光标坐在路径文件open file path under cursor"></a>打开光标坐在路径文件open file path under cursor</h3><p>SPC f l === M-x find-file-at-point</p>
+<h3 id="编辑"><a href="#编辑" class="headerlink" title="编辑"></a>编辑</h3><p>S s e: 编辑光标所在单词<br>选中多行，M-x -&gt; edit line: 编辑多行</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/12/27/emacs-command/" data-id="cj4hy1pdp0000dwx9hlpwnxun" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/12/27/emacs-command/" data-id="cjp4wffrf000cgh3guf8y2an0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Emacs/">Emacs</a></li></ul>
@@ -559,7 +575,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Emacs/">Emacs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVVM-Vue/">MVVM Vue</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mobile/">Mobile</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Perl/">Perl</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Server/">Server</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vim/">Vim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/">mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/svn/">svn</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Emacs/">Emacs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVVM-Vue/">MVVM Vue</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mobile/">Mobile</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nodejs/">Nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Perl/">Perl</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python-debug/">Python debug</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Server/">Server</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vim/">Vim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/">mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/svn/">svn</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thrift/">thrift</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/抓包/">抓包</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/机器学习/">机器学习</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -569,7 +585,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/CSS/" style="font-size: 15px;">CSS</a> <a href="/tags/Emacs/" style="font-size: 10px;">Emacs</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/MVVM-Vue/" style="font-size: 10px;">MVVM Vue</a> <a href="/tags/Mobile/" style="font-size: 10px;">Mobile</a> <a href="/tags/Perl/" style="font-size: 10px;">Perl</a> <a href="/tags/React/" style="font-size: 15px;">React</a> <a href="/tags/Server/" style="font-size: 10px;">Server</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/algorithm/" style="font-size: 15px;">algorithm</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a>
+      <a href="/tags/CSS/" style="font-size: 13.33px;">CSS</a> <a href="/tags/Emacs/" style="font-size: 10px;">Emacs</a> <a href="/tags/Git/" style="font-size: 13.33px;">Git</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/MVVM-Vue/" style="font-size: 10px;">MVVM Vue</a> <a href="/tags/Mobile/" style="font-size: 10px;">Mobile</a> <a href="/tags/Nodejs/" style="font-size: 10px;">Nodejs</a> <a href="/tags/Perl/" style="font-size: 10px;">Perl</a> <a href="/tags/Python/" style="font-size: 13.33px;">Python</a> <a href="/tags/Python-debug/" style="font-size: 10px;">Python debug</a> <a href="/tags/React/" style="font-size: 13.33px;">React</a> <a href="/tags/Server/" style="font-size: 10px;">Server</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/algorithm/" style="font-size: 13.33px;">algorithm</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/python/" style="font-size: 16.67px;">python</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/thrift/" style="font-size: 10px;">thrift</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/抓包/" style="font-size: 13.33px;">抓包</a> <a href="/tags/机器学习/" style="font-size: 10px;">机器学习</a>
     </div>
   </div>
 
@@ -578,7 +594,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -591,23 +607,23 @@
       <ul>
         
           <li>
-            <a href="/2017/06/26/react-isomorphic/">React同构</a>
+            <a href="/2018/12/01/hexo/">hexo</a>
           </li>
         
           <li>
-            <a href="/2017/06/23/iterm2/">iterm2</a>
+            <a href="/2018/06/25/throttle-debounce/">throttle-debounce</a>
           </li>
         
           <li>
-            <a href="/2017/06/18/node-debug/">NodeJs调试</a>
+            <a href="/2018/06/01/curl/">curl</a>
           </li>
         
           <li>
-            <a href="/2017/06/16/react-start/">react 入门</a>
+            <a href="/2018/05/03/webbench/">webbench</a>
           </li>
         
           <li>
-            <a href="/2017/06/12/iterm-commandline/">iterm-commandline</a>
+            <a href="/2018/01/16/python-array/">python-array</a>
           </li>
         
       </ul>
@@ -622,7 +638,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2017 marong<br>
+      &copy; 2018 marong<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
