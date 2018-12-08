@@ -67,10 +67,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-hexo" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-https" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/12/01/hexo/" class="article-date">
-  <time datetime="2018-12-01T03:11:47.000Z" itemprop="datePublished">2018-12-01</time>
+    <a href="/2018/12/08/https/" class="article-date">
+  <time datetime="2018-12-08T03:57:46.000Z" itemprop="datePublished">2018-12-08</time>
 </a>
     
   </div>
@@ -81,7 +81,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/01/hexo/">hexo</a>
+      <a class="article-title" href="/2018/12/08/https/">HTTPS</a>
     </h1>
   
 
@@ -89,22 +89,457 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="hexo-Github搭建自己的博客"><a href="#hexo-Github搭建自己的博客" class="headerlink" title="hexo + Github搭建自己的博客"></a>hexo + Github搭建自己的博客</h1><ul>
-<li><p>新建文章</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new [filename]</div></pre></td></tr></table></figure>
+        <p>HTTPS是在HTTP和TCP之间插入了一个密码加密层（TLS活SSL）。</p>
+<h3 id="HTTPS连接过程"><a href="#HTTPS连接过程" class="headerlink" title="HTTPS连接过程"></a>HTTPS连接过程</h3><table>
+<thead>
+<tr>
+<th>HTTP</th>
+<th>HTTPS</th>
+<th>应用层</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>无</td>
+<td>TSL or SSL</td>
+<td>安全层</td>
+</tr>
+<tr>
+<td>TCP</td>
+<td>TCP</td>
+<td>传输层</td>
+</tr>
+<tr>
+<td>IP</td>
+<td>IP</td>
+<td>网络层</td>
+</tr>
+<tr>
+<td>网络特有的链路接口</td>
+<td>网络特有的链路接口</td>
+<td>数据链路层</td>
+</tr>
+<tr>
+<td>网络物理硬件</td>
+<td>网络物理硬件</td>
+<td>物理层</td>
+</tr>
+</tbody>
+</table>
+<img src="/2018/12/08/https/https_link.jpg" alt="HTTPS连接过程" title="HTTPS连接过程">
+<h3 id="Charles-Fiddler抓包https原理"><a href="#Charles-Fiddler抓包https原理" class="headerlink" title="Charles/Fiddler抓包https原理"></a>Charles/Fiddler抓包https原理</h3><img src="/2018/12/08/https/https_charles.jpg" alt="Charles抓包原理" title="Charles抓包原理">
+<p>HTTPS抓包的原理，就是Charles作为中间代理，拿到服务器证书公钥和HTTPS连接的对称密钥，与客户端和服务端进行通信。</p>
+<p>Charles抓包的前提是客户端选择信任并安装Charles的CA证书，否则客户端会提示并中止连接，HTTPS还是很安全的。</p>
+<ul>
+<li>参考链接：<br><a href="https://zhuanlan.zhihu.com/p/22142170" target="_blank" rel="external">https://zhuanlan.zhihu.com/p/22142170</a><br><a href="https://blog.csdn.net/fox64194167/article/details/80387696" target="_blank" rel="external">https://blog.csdn.net/fox64194167/article/details/80387696</a><br><a href="https://www.jianshu.com/p/f6b34381beac" target="_blank" rel="external">https://www.jianshu.com/p/f6b34381beac</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/12/08/https/" data-id="cjpez1ufx000rlx3glega9isp" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTTPS/">HTTPS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-browserCatche" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/07/browserCatche/" class="article-date">
+  <time datetime="2018-12-07T10:46:23.000Z" itemprop="datePublished">2018-12-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/07/browserCatche/">browserCatche</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>参考文档</li>
+</ul>
+<p><a href="https://www.jianshu.com/p/54cc04190252" target="_blank" rel="external">https://www.jianshu.com/p/54cc04190252</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/12/07/browserCatche/" data-id="cjpez1ufc0003lx3gyepfldkt" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/browser/">browser</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-mvvm" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/05/mvvm/" class="article-date">
+  <time datetime="2018-12-05T03:19:42.000Z" itemprop="datePublished">2018-12-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/05/mvvm/">双向绑定</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在新的框架中，通过对数据的监控，发现变化genuine</p>
+<ul>
+<li>基于脏检查的双向绑定<br>每个双向绑定的元素都有一个watcher<br>angular对DOM事件/XHR($http)等事件做了封装，会触发digest的流程，检查所有的watcher<br>Angular为Scope模型上设置一个监听队列，用来监听数据变化并更新view。<br>当有变量在view(html)上绑定时候，angular就会在$watch队列里面插入一条$watch,用来检查监视的model里是否有变化。<br>当浏览器收到特定的事件后，$digest循环就会触发，$digest会遍历所有的$watch<br>$digest脏检查最少2次，最多10次，多于10次会抛出异常</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+<ul>
+<li>数据劫持：<br>vue采用数据劫持结合发布-订阅模式，通过Object.defineProperty来劫持各个属性的setter、getter，在数据变动时发布消息给订阅者，触发响应的监听回调。<br>getter/setter的双向绑定</li>
+</ul>
+<ol>
+<li>简单实现方法<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">// html</div><div class="line"> &lt;input type=&quot;text&quot; id=&quot;txt&quot;&gt;</div><div class="line"> &lt;p id=&quot;showTxt&quot;&gt;&lt;/p&gt;</div><div class="line"></div><div class="line">// js</div><div class="line">var data = &#123;&#125;;</div><div class="line">const txtNode = document.getElementById(&apos;txt&apos;);</div><div class="line">const showTxtNode = document.getElementById(&apos;showTxt&apos;);</div><div class="line">Object.defineProperty(data, &apos;txt&apos;, &#123;</div><div class="line">  set: function (newValue) &#123;</div><div class="line">    txtNode.value = newValue;</div><div class="line">    showTxtNode.innerHTML = newValue;</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line">txtNode.addEventListener(&apos;keyup&apos;, function (e) &#123;</div><div class="line">  data.txt = e.target.value</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 </li>
-<li><p>部署到Github</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo g # 生成</div><div class="line">hexo s # 启动本地web服务器</div><div class="line">hexo deploy</div></pre></td></tr></table></figure>
+</ol>
+<p>2.数据劫持+发布订阅<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div><div class="line">206</div><div class="line">207</div><div class="line">208</div><div class="line">209</div><div class="line">210</div><div class="line">211</div><div class="line">212</div><div class="line">213</div><div class="line">214</div><div class="line">215</div><div class="line">216</div><div class="line">217</div><div class="line">218</div><div class="line">219</div><div class="line">220</div><div class="line">221</div><div class="line">222</div><div class="line">223</div><div class="line">224</div><div class="line">225</div><div class="line">226</div><div class="line">227</div><div class="line">228</div><div class="line">229</div><div class="line">230</div><div class="line">231</div><div class="line">232</div><div class="line">233</div><div class="line">234</div><div class="line">235</div><div class="line">236</div><div class="line">237</div><div class="line">238</div><div class="line">239</div><div class="line">240</div><div class="line">241</div><div class="line">242</div><div class="line">243</div><div class="line">244</div><div class="line">245</div><div class="line">246</div><div class="line">247</div><div class="line">248</div><div class="line">249</div><div class="line">250</div><div class="line">251</div><div class="line">252</div><div class="line">253</div><div class="line">254</div><div class="line">255</div><div class="line">256</div><div class="line">257</div><div class="line">258</div><div class="line">259</div></pre></td><td class="code"><pre><div class="line">// html</div><div class="line">    &lt;div id=&quot;app&quot; &gt;</div><div class="line">      &lt;h2&gt;&#123;&#123;title&#125;&#125;&lt;/h2&gt;</div><div class="line">      &lt;input v-model=&quot;name&quot;&gt;</div><div class="line">      &lt;h1&gt;&#123;&#123;name&#125;&#125;&lt;/h1&gt;</div><div class="line">      &lt;button v-on:click=&quot;clickMe&quot;&gt;click me!&lt;/button&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line"></div><div class="line">// js</div><div class="line">function Compile(el, vm) &#123;</div><div class="line">    this.vm = vm;</div><div class="line">    this.el = document.querySelector(el);</div><div class="line">    this.fragment = null;</div><div class="line">    this.init();</div><div class="line">&#125;</div><div class="line"></div><div class="line">Compile.prototype = &#123;</div><div class="line">    init: function () &#123;</div><div class="line">        if (this.el) &#123;</div><div class="line">            this.fragment = this.nodeToFragment(this.el);</div><div class="line">            this.compileElement(this.fragment);</div><div class="line">            this.el.appendChild(this.fragment);</div><div class="line">        &#125; else &#123;</div><div class="line">            console.log(&apos;Dom元素不存在&apos;);</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    nodeToFragment: function (el) &#123;</div><div class="line">        var fragment = document.createDocumentFragment();</div><div class="line">        var child = el.firstChild;</div><div class="line">        while (child) &#123;</div><div class="line">            // 将Dom元素移入fragment中</div><div class="line">            fragment.appendChild(child);</div><div class="line">            child = el.firstChild</div><div class="line">        &#125;</div><div class="line">        return fragment;</div><div class="line">    &#125;,</div><div class="line">    compileElement: function (el) &#123;</div><div class="line">        var childNodes = el.childNodes;</div><div class="line">        var self = this;</div><div class="line">        [].slice.call(childNodes).forEach(function(node) &#123;</div><div class="line">            var reg = /\&#123;\&#123;(.*)\&#125;\&#125;/;</div><div class="line">            var text = node.textContent;</div><div class="line"></div><div class="line">            if (self.isElementNode(node)) &#123;</div><div class="line">                self.compile(node);</div><div class="line">            &#125; else if (self.isTextNode(node) &amp;&amp; reg.test(text)) &#123;</div><div class="line">                self.compileText(node, reg.exec(text)[1]);</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            if (node.childNodes &amp;&amp; node.childNodes.length) &#123;</div><div class="line">                self.compileElement(node);</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">    &#125;,</div><div class="line">    compile: function(node) &#123;</div><div class="line">        var nodeAttrs = node.attributes;</div><div class="line">        var self = this;</div><div class="line">        Array.prototype.forEach.call(nodeAttrs, function(attr) &#123;</div><div class="line">            var attrName = attr.name;</div><div class="line">            if (self.isDirective(attrName)) &#123;</div><div class="line">                var exp = attr.value;</div><div class="line">                var dir = attrName.substring(2);</div><div class="line">                if (self.isEventDirective(dir)) &#123;  // 事件指令</div><div class="line">                    self.compileEvent(node, self.vm, exp, dir);</div><div class="line">                &#125; else &#123;  // v-model 指令</div><div class="line">                    self.compileModel(node, self.vm, exp, dir);</div><div class="line">                &#125;</div><div class="line">                node.removeAttribute(attrName);</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">    &#125;,</div><div class="line">    compileText: function(node, exp) &#123;</div><div class="line">        var self = this;</div><div class="line">        var initText = this.vm[exp];</div><div class="line">        this.updateText(node, initText);</div><div class="line">        new Watcher(this.vm, exp, function (value) &#123;</div><div class="line">            self.updateText(node, value);</div><div class="line">        &#125;);</div><div class="line">    &#125;,</div><div class="line">    compileEvent: function (node, vm, exp, dir) &#123;</div><div class="line">        var eventType = dir.split(&apos;:&apos;)[1];</div><div class="line">        var cb = vm.methods &amp;&amp; vm.methods[exp];</div><div class="line"></div><div class="line">        if (eventType &amp;&amp; cb) &#123;</div><div class="line">            node.addEventListener(eventType, cb.bind(vm), false);</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    compileModel: function (node, vm, exp, dir) &#123;</div><div class="line">        var self = this;</div><div class="line">        var val = this.vm[exp];</div><div class="line">        this.modelUpdater(node, val);</div><div class="line">        new Watcher(this.vm, exp, function (value) &#123;</div><div class="line">            self.modelUpdater(node, value);</div><div class="line">        &#125;);</div><div class="line"></div><div class="line">        node.addEventListener(&apos;input&apos;, function(e) &#123;</div><div class="line">            var newValue = e.target.value;</div><div class="line">            if (val === newValue) &#123;</div><div class="line">                return;</div><div class="line">            &#125;</div><div class="line">            self.vm[exp] = newValue;</div><div class="line">            val = newValue;</div><div class="line">        &#125;);</div><div class="line">    &#125;,</div><div class="line">    updateText: function (node, value) &#123;</div><div class="line">        node.textContent = typeof value == &apos;undefined&apos; ? &apos;&apos; : value;</div><div class="line">    &#125;,</div><div class="line">    modelUpdater: function(node, value, oldValue) &#123;</div><div class="line">        node.value = typeof value == &apos;undefined&apos; ? &apos;&apos; : value;</div><div class="line">    &#125;,</div><div class="line">    isDirective: function(attr) &#123;</div><div class="line">        return attr.indexOf(&apos;v-&apos;) == 0;</div><div class="line">    &#125;,</div><div class="line">    isEventDirective: function(dir) &#123;</div><div class="line">        return dir.indexOf(&apos;on:&apos;) === 0;</div><div class="line">    &#125;,</div><div class="line">    isElementNode: function (node) &#123;</div><div class="line">        return node.nodeType == 1;</div><div class="line">    &#125;,</div><div class="line">    isTextNode: function(node) &#123;</div><div class="line">        return node.nodeType == 3;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">function Watcher(vm, exp, cb) &#123;</div><div class="line">  this.cb = cb;</div><div class="line">  this.vm = vm;</div><div class="line">  this.exp = exp;</div><div class="line">  this.value = this.get();  // 将自己添加到订阅器的操作</div><div class="line">&#125;</div><div class="line"></div><div class="line">Watcher.prototype = &#123;</div><div class="line">  update: function() &#123;</div><div class="line">    this.run();</div><div class="line">  &#125;,</div><div class="line">  run: function() &#123;</div><div class="line">    var value = this.vm.data[this.exp];</div><div class="line">    var oldVal = this.value;</div><div class="line">    if (value !== oldVal) &#123;</div><div class="line">      this.value = value;</div><div class="line">      this.cb.call(this.vm, value, oldVal);</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  get: function() &#123;</div><div class="line">    Dep.target = this;  // 缓存自己</div><div class="line">    var value = this.vm.data[this.exp]  // 强制执行监听器里的get函数</div><div class="line">    Dep.target = null;  // 释放自己</div><div class="line">    return value;</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">function Observer(data) &#123;</div><div class="line">    this.data = data;</div><div class="line">    this.walk(data);</div><div class="line">&#125;</div><div class="line"></div><div class="line">Observer.prototype = &#123;</div><div class="line">    walk: function(data) &#123;</div><div class="line">        var self = this;</div><div class="line">        Object.keys(data).forEach(function(key) &#123;</div><div class="line">            self.defineReactive(data, key, data[key]);</div><div class="line">        &#125;);</div><div class="line">    &#125;,</div><div class="line">    defineReactive: function(data, key, val) &#123;</div><div class="line">        var dep = new Dep();</div><div class="line">        var childObj = observe(val);</div><div class="line">        Object.defineProperty(data, key, &#123;</div><div class="line">            enumerable: true,</div><div class="line">            configurable: true,</div><div class="line">            get: function getter () &#123;</div><div class="line">                if (Dep.target) &#123;</div><div class="line">                    dep.addSub(Dep.target);</div><div class="line">                &#125;</div><div class="line">                return val;</div><div class="line">            &#125;,</div><div class="line">            set: function setter (newVal) &#123;</div><div class="line">                if (newVal === val) &#123;</div><div class="line">                    return;</div><div class="line">                &#125;</div><div class="line">                val = newVal;</div><div class="line">                dep.notify();</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">function observe(value, vm) &#123;</div><div class="line">    if (!value || typeof value !== &apos;object&apos;) &#123;</div><div class="line">        return;</div><div class="line">    &#125;</div><div class="line">    return new Observer(value);</div><div class="line">&#125;;</div><div class="line"></div><div class="line">function Dep () &#123;</div><div class="line">    this.subs = [];</div><div class="line">&#125;</div><div class="line">Dep.prototype = &#123;</div><div class="line">    addSub: function(sub) &#123;</div><div class="line">        this.subs.push(sub);</div><div class="line">    &#125;,</div><div class="line">    notify: function() &#123;</div><div class="line">        this.subs.forEach(function(sub) &#123;</div><div class="line">            sub.update();</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line">Dep.target = null;</div><div class="line"></div><div class="line">function SelfVue (options) &#123;</div><div class="line">  var self = this;</div><div class="line">  this.data = options.data;</div><div class="line">  this.methods = options.methods;</div><div class="line"></div><div class="line">  Object.keys(this.data).forEach(function(key) &#123;</div><div class="line">    self.proxyKeys(key);</div><div class="line">  &#125;);</div><div class="line"></div><div class="line">  observe(this.data);</div><div class="line">  new Compile(options.el, this);</div><div class="line">  options.mounted.call(this); // 所有事情处理好后执行mounted函数</div><div class="line">&#125;</div><div class="line"></div><div class="line">SelfVue.prototype = &#123;</div><div class="line">  proxyKeys: function (key) &#123;</div><div class="line">    var self = this;</div><div class="line">    Object.defineProperty(this, key, &#123;</div><div class="line">      enumerable: false,</div><div class="line">      configurable: true,</div><div class="line">      get: function getter () &#123;</div><div class="line">        return self.data[key];</div><div class="line">      &#125;,</div><div class="line">      set: function setter (newVal) &#123;</div><div class="line">        self.data[key] = newVal;</div><div class="line">      &#125;</div><div class="line">    &#125;);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">new SelfVue(&#123;</div><div class="line">  el: &apos;#app&apos;,</div><div class="line">  data: &#123;</div><div class="line">    title: &apos;hello world&apos;,</div><div class="line">    name: &apos;canfoo&apos;</div><div class="line">  &#125;,</div><div class="line">  methods: &#123;</div><div class="line">    clickMe: function () &#123;</div><div class="line">      this.title = &apos;hello world&apos;;</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  mounted: function () &#123;</div><div class="line">    window.setTimeout(() =&gt; &#123;</div><div class="line">      this.title = &apos;你好&apos;;</div><div class="line">    &#125;, 1000);</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<ul>
+<li>参考链接:<a href="http://www.cnblogs.com/canfoo/p/6891868.html" target="_blank" rel="external">http://www.cnblogs.com/canfoo/p/6891868.html</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/12/05/mvvm/" data-id="cjpez1ug30014lx3gfqr6yc4y" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mvvm/">mvvm</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-bindContext" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/01/bindContext/" class="article-date">
+  <time datetime="2018-12-01T10:25:08.000Z" itemprop="datePublished">2018-12-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/01/bindContext/">call, apply, bind的区别</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>call/apply/bind改变函数运行时候的上下文</p>
+<ul>
+<li><p>bind 的实现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Function.prototype.bind = function(obj) &#123;</div><div class="line">  var method = this;</div><div class="line">  var args = [].slice.call(arguments, 1);</div><div class="line">  return function() &#123;</div><div class="line">    method.apply(obj, args.concat([].slice.call(arguments)));</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>bind/apply/call的区别<br>bind: 只是改变了this指向，没有立即调用<br>apply: 传入的参数需要是数组，立即调用<br>call:  传入正常的参数，立即调用</p>
+</li>
+<li><p>使用场景</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">var people = &#123;</div><div class="line">  sayName: function(age)&#123;</div><div class="line">    debugger</div><div class="line">    console.log(this.name, age);</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line">var person = &#123;</div><div class="line">  name: &apos;marong&apos;</div><div class="line">&#125;</div><div class="line"></div><div class="line">people.sayName.call(person, 22);</div><div class="line">people.sayName.bind(person)(22);</div><div class="line">people.sayName.apply(person, [22]);</div></pre></td></tr></table></figure>
 </li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/01/hexo/" data-id="cjp4wffrj000igh3go6cuanqe" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/12/01/bindContext/" data-id="cjpez1ufg0005lx3gwodvlyhp" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/">blog</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-combineSum" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/01/combineSum/" class="article-date">
+  <time datetime="2018-12-01T08:15:58.000Z" itemprop="datePublished">2018-12-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/01/combineSum/">N个数相加的和为M</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">var combinationSum = function(candidates, target, n) &#123;</div><div class="line">  if (!candidates || !candidates.length) &#123; return []; &#125;</div><div class="line">  candidates.sort((a,b) =&gt; a - b);</div><div class="line">  const solutions = [];</div><div class="line">  const findCombos = function(candIdx, subtotal, solution, n) &#123;</div><div class="line">    for (let i = candIdx; i &lt; candidates.length; i++) &#123;</div><div class="line">      console.log(i, candIdx, subtotal,  solution, n)</div><div class="line">      if (subtotal + candidates[i] === target &amp;&amp; n == 1) &#123;</div><div class="line">        solutions.push(solution.concat(candidates[i]));</div><div class="line">      &#125; else if (subtotal + candidates[i] &lt; target &amp;&amp; i + 1 &lt; candidates.length &amp;&amp; n &gt; 1) &#123;</div><div class="line">        findCombos(i + 1, subtotal + candidates[i], solution.concat(candidates[i]), n - 1);</div><div class="line"></div><div class="line">      &#125;</div><div class="line">      // while (candidates[i + 1] === candidates[i]) &#123; i++; &#125;</div><div class="line">    &#125;;</div><div class="line">  &#125;;</div><div class="line">  findCombos(0, 0, [], n);</div><div class="line">  return solutions;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">var result = combinationSum2([1,2,3,3,4,5,6,7,8,9], 6, 3)</div><div class="line">console.log(&apos;result&apos;, result);</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/12/01/combineSum/" data-id="cjpez1ufj0009lx3gy127l1dm" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/">algorithm</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-define" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/03/define/" class="article-date">
+  <time datetime="2018-11-03T09:36:59.000Z" itemprop="datePublished">2018-11-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/03/define/">define定义模块函数的实现</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">var Amd = (function Manager()&#123;</div><div class="line">  var modules = &#123;&#125;;</div><div class="line">  function define(name, deps, impl) &#123;</div><div class="line">    for(var i = 0; i &lt; deps.length; i++) &#123;</div><div class="line">      deps[i] = modules[deps[i]];</div><div class="line">    &#125;</div><div class="line">    modules[name] = impl.apply(impl, deps);</div><div class="line"></div><div class="line">  &#125;</div><div class="line">  function get(name) &#123;</div><div class="line">    return modules[name];</div><div class="line">  &#125;</div><div class="line">  return &#123;</div><div class="line">    define:define,</div><div class="line">    get: get,</div><div class="line">  &#125;</div><div class="line">&#125;)();</div><div class="line"></div><div class="line"></div><div class="line">Amd.define(&apos;a&apos;, [], function()&#123;</div><div class="line">  function sayName(who) &#123;</div><div class="line">    return &apos;Hello &apos; + who;</div><div class="line">  &#125;</div><div class="line">  return &#123;</div><div class="line">    sayName,</div><div class="line">  &#125;;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">Amd.define(&apos;b&apos;, [&apos;a&apos;], function(a) &#123;</div><div class="line">  var name = &apos;test&apos;;</div><div class="line">  function sayInfo() &#123;</div><div class="line">    console.log(a.sayName(name));</div><div class="line">  &#125;</div><div class="line">  return &#123;</div><div class="line">    sayInfo,</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line">var b = Amd.get(&apos;b&apos;);</div><div class="line">b.sayInfo();</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/11/03/define/" data-id="cjpez1ufp000hlx3gbvczcgaq" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-promise" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/01/promise/" class="article-date">
+  <time datetime="2018-10-01T13:59:03.000Z" itemprop="datePublished">2018-10-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/01/promise/">promise</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div></pre></td><td class="code"><pre><div class="line">function Promise(executor) &#123;</div><div class="line">  var self = this;</div><div class="line">  self.status = &apos;pending&apos;;</div><div class="line">  self.value = undefined;</div><div class="line">  self.reason = undefined;</div><div class="line">  self.onFulfilledArr = [];</div><div class="line">  self.onRejectedArr = [];</div><div class="line">  function resolve(value) &#123;</div><div class="line">    if (self.status === &apos;pending&apos;) &#123;</div><div class="line">      self.value = value;</div><div class="line">      self.status = &apos;fulfilled&apos;;</div><div class="line">      self.onFulfilledArr.forEach(function(fn) &#123;</div><div class="line">        fn(self.value);</div><div class="line">      &#125;)</div><div class="line">    &#125;</div><div class="line"></div><div class="line">  &#125;</div><div class="line">  function reject(resaon) &#123;</div><div class="line">    if (self.status === &apos;pending&apos;) &#123;</div><div class="line">      self.reason= resaon;</div><div class="line">      self.status = &apos;rejected&apos;;</div><div class="line">      self.onRejectedArr.forEach(function(fn) &#123;</div><div class="line">        fn(self.reason);</div><div class="line">      &#125;)</div><div class="line">    &#125;</div><div class="line"></div><div class="line">  &#125;</div><div class="line">  try &#123;</div><div class="line">    executor(resolve, reject);</div><div class="line">  &#125; catch(err) &#123;</div><div class="line">    reject(err);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">&#125;;</div><div class="line"></div><div class="line">function resolvePromise(Promise2, x, resolve, reject) &#123;</div><div class="line"></div><div class="line">  if (Promise2 === x) &#123;</div><div class="line">    reject(new TypeError(&apos;循环引用&apos;))</div><div class="line">  &#125;</div><div class="line">  let called;</div><div class="line">  if ( x !== null &amp;&amp; (typeof x === &apos;function&apos; || typeof x === &apos;object&apos;)) &#123;</div><div class="line">    let then = x.then;</div><div class="line">    try &#123;</div><div class="line">      if (typeof then === &apos;function&apos;) &#123;</div><div class="line">        then.call(x, function(y)&#123;</div><div class="line">          if (called) return;</div><div class="line">          called = true;</div><div class="line">          resolvePromise(Promise2, y, resolve, reject);</div><div class="line">        &#125;, function(err) &#123;</div><div class="line">          if (called) return;</div><div class="line">          called = true;</div><div class="line">          reject(err);</div><div class="line">        &#125;)</div><div class="line">      &#125; else &#123;</div><div class="line">        resolve(then);</div><div class="line">      &#125;</div><div class="line"></div><div class="line">    &#125;catch(err) &#123;</div><div class="line">      if (called) return;</div><div class="line">      called = true;</div><div class="line">      if (called) return;</div><div class="line">      reject(err);</div><div class="line">    &#125;</div><div class="line">  &#125; else &#123;</div><div class="line">    resolve(x);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Promise.prototype.then = function(onfulfilled, onrejected) &#123;</div><div class="line">  onfulfilled = typeof onfulfilled === &apos;function&apos; ? onfulfilled : function(value) &#123; return value&#125;;</div><div class="line">  onrejected = typeof onrejected === &apos;function&apos; ? onrejected : function(reason) &#123; return reason&#125;;</div><div class="line">  var self = this;</div><div class="line">  var Promise2;</div><div class="line">  if (self.status == &apos;fulfilled&apos;) &#123;</div><div class="line">    return Promise2 = new Promise(function(resolve, reject) &#123;</div><div class="line">      try &#123;</div><div class="line">        let x = onfulfilled(self.value);</div><div class="line">        resolvePromise(Promise2,x, resolve, reject);</div><div class="line">        // resolve(x);</div><div class="line">      &#125; catch(err) &#123;</div><div class="line">        reject(e);</div><div class="line">      &#125;</div><div class="line">    &#125;)</div><div class="line">  &#125;</div><div class="line">  if(self.status === &apos;rejected&apos;) &#123;</div><div class="line">    return Promise2 = new Promise(function(resolve, reject) &#123;</div><div class="line">      try &#123;</div><div class="line">        let x =  onrejected(self.reason);</div><div class="line">        resolvePromise(Promise2,x, resolve, reject);</div><div class="line">      &#125; catch(err) &#123;</div><div class="line">        reject(e);</div><div class="line">      &#125;</div><div class="line"></div><div class="line">    &#125;);</div><div class="line">  &#125;</div><div class="line">  if(self.status === &apos;pending&apos;) &#123;</div><div class="line">    return Promise2 = new Promise(function(resolve, reject) &#123;</div><div class="line">      self.onFulfilledArr.push(function() &#123;</div><div class="line"></div><div class="line">        try &#123;</div><div class="line">          let x = onfulfilled(self.value);</div><div class="line">          resolvePromise(Promise2,x, resolve, reject);</div><div class="line">        &#125; catch(err) &#123;</div><div class="line">          reject(err);</div><div class="line">        &#125;</div><div class="line">      &#125;);</div><div class="line">      self.onRejectedArr.push(function() &#123;</div><div class="line">        try &#123;</div><div class="line">          let x = onrejected(self.reason);</div><div class="line">          resolvePromise(Promise2,x, resolve, reject);</div><div class="line">        &#125; catch(err) &#123;</div><div class="line">          reject(err);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">      &#125;);</div><div class="line">    &#125;);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Promise.prototype.catch = function(cb) &#123;</div><div class="line">  return this.then(null, cb);</div><div class="line">&#125;</div><div class="line"></div><div class="line">Promise.resolve = function(value) &#123;</div><div class="line">  return new Promise(function(resolve, reject)&#123;</div><div class="line">    resolve(value);</div><div class="line">  &#125;)</div><div class="line">&#125;</div><div class="line">Promise.reject = function(reason) &#123;</div><div class="line">  return new Promise(function(resolve, reject) &#123;</div><div class="line">    reject(reason);</div><div class="line">  &#125;);</div><div class="line">&#125;</div><div class="line">Promise.all = function(promises) &#123;</div><div class="line">  if(Array.isArray(promises)) &#123;</div><div class="line">    throw new TypeError(&apos;The parameters of the promise method must be an Array&apos;);</div><div class="line">  &#125;</div><div class="line">  return new Promise(function(resove, reject) &#123;</div><div class="line"></div><div class="line">    try&#123;</div><div class="line">      let arr = [];</div><div class="line">      let count = 0;</div><div class="line">      for (let i = 0; i &lt; promises.length; i++) &#123;</div><div class="line">        promises[i].then(function(y) &#123;</div><div class="line">          arr[i] = y;</div><div class="line">          count++;</div><div class="line">          if (count === promises.length) &#123;</div><div class="line">            resolve(arr);</div><div class="line">          &#125;</div><div class="line">        &#125;, reject);</div><div class="line"></div><div class="line">      &#125;;</div><div class="line"></div><div class="line">    &#125; catch(err) &#123;</div><div class="line">      reject(err);</div><div class="line">    &#125;</div><div class="line">  &#125;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">Promise.race = function(promises) &#123;</div><div class="line">  return new Promise(function(resolve, reject) &#123;</div><div class="line">    for(let i = 0; i &lt; promises.length; i++) &#123;</div><div class="line">      promises[i].then(resolve, reject);</div><div class="line">    &#125;</div><div class="line">  &#125;)</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">var p = new Promise(function(resolve, reject)&#123;</div><div class="line">  setTimeout(function() &#123;</div><div class="line">    resolve(200);</div><div class="line">  &#125;, 200);</div><div class="line">&#125;)</div><div class="line">p.then(function(result)&#123;</div><div class="line">  console.log(&apos;success1&apos;, result);</div><div class="line">  return new Promise(function(resolve, reject) &#123;</div><div class="line">    resolve(800);</div><div class="line">  &#125;);</div><div class="line">&#125;, function(reason) &#123;</div><div class="line">  console.log(&apos;failed1&apos;, reason);</div><div class="line">  return reason;</div><div class="line">&#125;).then().then(function(result)&#123;</div><div class="line">  console.log(&apos;success2&apos;, result);</div><div class="line">&#125;, function(reason)&#123;</div><div class="line">  console.log(&apos;failed2&apos;, reason);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/10/01/promise/" data-id="cjpez1ugj001plx3g0vhrez6h" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-amdloader" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/17/amdloader/" class="article-date">
+  <time datetime="2018-09-17T09:55:55.000Z" itemprop="datePublished">2018-09-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/17/amdloader/">模块加载器</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>AMD模块加载器<ul>
+<li>通过define函数定义模块</li>
+<li>可以加载define定义的函数，也可以加载非define的函数</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/09/17/amdloader/" data-id="cjpez1uf70001lx3g9jqewnku" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-eventlop" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/01/eventlop/" class="article-date">
+  <time datetime="2018-08-01T13:57:05.000Z" itemprop="datePublished">2018-08-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/01/eventlop/">eventlop</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>JS是单线程，虽然有web-worker多线程出现，但也是在主线程的控制下，web-worker仅仅能计算任务，不能操作dom，所以本质上还是单线程.<br>单线程的任务是串行的，后一个任务需要等待前一个任务的执行，这就可能出现长时间的等待，但由于类似ajax网络请求，setTimeout时间延迟、DOM事件的用户交互等，这些任务并不消耗CPU，是一种空等，浪费资源，因此出现了异步。通过将任务交给相应的异步模块去处理，主线程的效率大大提升，可以并行的去处理其它的操作。当异步处理完成，主线程空闲时，主线程读取响应的callback，进行后续的操作，最大程度的利用CPU。此时出现了同步和异步执行的概念,同步执行是主线程按照顺序，串行执行任务；异步执行就是cpu跳过等待，先处理后续的任务（CPU, 与网络模块、timer等并行进行任务）.因此产生了任务队列与事件循环，来协调主线程与异步模块之前的工作。</li>
+<li><p>不同任务队列之间，存在着优先级，优先级高的先获取。<br>任务队列有两种类型，一种是microtask queue, 另一种是macrotask queue。<br>microtask queue:<br>唯一，整个事件循环中，仅存在一个；执行为同步，同一个事件循环中的microtask会按队列顺序，串行执行完毕；process.nextTick, Promise, Object.observer, MutationObserver<br>macrotask queue:<br>不唯一，存在一定的优先级（用户I/O部分优先级更高）;异步执行,同一个事件循环中，只执行一个。setTimeout setInterval,setImmediate, I/O, UI rendering</p>
+</li>
+<li><p>事件循环流程：<br>主线程读取JS代码，此时为同步环境，形成相应的堆和执行栈<br>主线程遇到异步任务，制定给对应的异步进程进行处理<br>异步进程处理完毕（ajax返回， DOM事件，timer）, 将相应的异步任务推入任务队列<br>主线程查询任务队列， 执行microtask(微任务) queue, 将其按顺序执行，全部执行完毕<br>主线程查询任务队列，执行macrotask(宏任务) queue， 取队首任务执行，执行完毕。<br>重复查询任务队列<br>microtask queue中的所有callback处在同一个事件循环中，而macrotask queue中的callback有自己的事件循环<br>同步环境执行 -&gt; 事件循环1（microtask queue all） -&gt; 事件循环2(macrotask queue中的一个) -&gt; 事件循环1（microtask queue all）<br>-&gt; 事件循环2(macrotask queue中的一个)</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">  console.log(&apos;1, time = &apos; + new Date().toString())</div><div class="line">  setTimeout(macroCallback, 0);</div><div class="line">  new Promise(function(resolve, reject) &#123;</div><div class="line">      console.log(&apos;2, time = &apos; + new Date().toString())</div><div class="line">      resolve();</div><div class="line">      console.log(&apos;3, time = &apos; + new Date().toString())</div><div class="line">  &#125;).then(microCallback);</div><div class="line"></div><div class="line">  function macroCallback() &#123;</div><div class="line">      console.log(&apos;4, time = &apos; + new Date().toString())</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  function microCallback() &#123;</div><div class="line">      console.log(&apos;5, time = &apos; + new Date().toString())</div><div class="line">  &#125;</div><div class="line">// 执行结果：</div><div class="line">同步执行：1，2，3</div><div class="line">事件循环1(micro callback): 5</div><div class="line">事件循环2(macro callback): 4</div></pre></td></tr></table></figure>
+<p>  async function async1() {<br>      console.log(“async1 start”);<br>      await  async2();<br>      console.log(“async1 end”);<br>   }<br>  async  function async2() {<br>     console.log( ‘async2’);<br>  }<br>  console.log(“script start”);<br>  setTimeout(function () {<br>      console.log(“settimeout”);<br>  },0);<br>  async1();<br>  new Promise(function (resolve) {<br>      console.log(“promise1”);<br>      resolve();<br>  }).then(function () {<br>      console.log(“promise2”);<br>  });<br>  console.log(‘script end’);</p>
+<p>```<br>script start<br>async1 start<br>async2<br>promise1<br>script end<br>promise2<br>async1 end<br>undefined<br>setTimeout</p>
+<p>async 表达式的返回值<br>await表达式的作用和返回值</p>
+<p>await是一个让出线程的标志，await后面的函数会先执行一遍， 然后就会跳出整个async函数来执行后面的js代码<br>等本轮事件循环执行完了之后，又会跳回到async函数中等待await<br>后面表达式的返回值，如果返回值为非Promise则继续执行async函数后面的代码，否则将返回promise放入队列中</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/08/01/eventlop/" data-id="cjpez1ufz000vlx3g5urxyyq6" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-stackQueue" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/22/stackQueue/" class="article-date">
+  <time datetime="2018-07-22T15:03:59.000Z" itemprop="datePublished">2018-07-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/22/stackQueue/">stackQueue</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><p>栈是一种特殊的列表，栈内的元素只能通过栈顶访问, 是一种后入先出（LIFO, last-in-first-out）的数据结构, 例如摞盘子就是常见的栈的列子。</p>
+<h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><p>队列是一种特殊的列表，只能在队尾插入元素，在对首删除元素，是一种先进先出(FIFO, first-in-first-out)的数据结构。</p>
+<h2 id="用栈实现队列"><a href="#用栈实现队列" class="headerlink" title="用栈实现队列"></a>用栈实现队列</h2><p>思路：<br>入队：将元素压入栈1<br>出队：如果栈2 为空，将栈1倒(pop)入(push)栈2, 栈2出栈(pop);<br>     如果栈2 不为空， 栈2 出栈;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line">function Stack() &#123;</div><div class="line">  this.dataStore = [];</div><div class="line">  this.push = function(item) &#123;</div><div class="line">    this.dataStore.push(item);</div><div class="line">    return this.dataStore;</div><div class="line"></div><div class="line">  &#125;;</div><div class="line">  this.pop = function() &#123;</div><div class="line">    return this.dataStore.pop();</div><div class="line">  &#125;;</div><div class="line">  this.length = function() &#123;</div><div class="line">    return this.dataStore.length;</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"></div><div class="line">function Queue() &#123;</div><div class="line">  var stack1 = new Stack();</div><div class="line">  var stack2 = new Stack();</div><div class="line">  this.enqueue= function(item) &#123;</div><div class="line">    return stack1.push(item);</div><div class="line">  &#125;;</div><div class="line">  this.dequeue = function() &#123;</div><div class="line">    if(!stack1.length() &amp;&amp; !stack2.length())&#123;</div><div class="line">      throw new Error(&quot;Queue is empty&quot;);</div><div class="line">    &#125;</div><div class="line">    if(!stack2.length()) &#123;</div><div class="line">      while(stack1.length()) &#123;</div><div class="line">        stack2.push(stack1.pop());</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">    return stack2.pop();</div><div class="line">  &#125;;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">var queue = new Queue();</div><div class="line">console.log(queue.enqueue(2))</div><div class="line">console.log(queue.enqueue(4))</div><div class="line">console.log(queue.enqueue(6))</div><div class="line">console.log(queue.dequeue())</div><div class="line">console.log(queue.enqueue(8))</div><div class="line">console.log(queue.enqueue(10))</div><div class="line">console.log(queue.dequeue())</div><div class="line">console.log(queue.dequeue())</div><div class="line">console.log(queue.dequeue())</div><div class="line">console.log(queue.dequeue())</div></pre></td></tr></table></figure></p>
+<h2 id="用队列实现栈"><a href="#用队列实现栈" class="headerlink" title="用队列实现栈"></a>用队列实现栈</h2><p>要实现的功能，一个数组，后进先出，也就是只能用push，shift来实现push, pop功能<br>思路：<br>进栈：将元素插入当前有值的队列<br>出栈：将当前有值的队列，将该队列中除最后一个元素的全部元素依次出队，返回该对的最后一个元素。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line">function Queue() &#123;</div><div class="line">  this.dataStore = [];</div><div class="line">  this.enqueue = function(item) &#123;</div><div class="line">    this.dataStore.push(item);</div><div class="line">    return this.dataStore;</div><div class="line">  &#125;</div><div class="line">  this.dequeue = function() &#123;</div><div class="line">    return this.dataStore.shift();</div><div class="line">  &#125;</div><div class="line">  this.length = function() &#123;</div><div class="line">    return this.dataStore.length;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">function Stack() &#123;</div><div class="line">  var queue1 = new Queue();</div><div class="line">  var queue2 = new Queue();</div><div class="line">  this.push = function(item)&#123;</div><div class="line">    let curQueue = queue1;</div><div class="line">    curQueue = !!queue2.length() ? queue2 : queue1;</div><div class="line">    return curQueue.enqueue(item);</div><div class="line">  &#125;</div><div class="line">  this.pop = function()&#123;</div><div class="line">    if(!queue1.length() &amp;&amp; !queue2.length()) &#123;</div><div class="line">      throw new Error(&apos;Stack is Empty&apos;);</div><div class="line">    &#125;</div><div class="line">    const curQueue = !!queue1.length() ? queue1 : queue2;</div><div class="line">    const tmpQueue = curQueue === queue1 ? queue2 : queue1;</div><div class="line"></div><div class="line">    while(curQueue.length() &gt; 1) &#123;</div><div class="line">      tmpQueue.enqueue(curQueue.dequeue());</div><div class="line">    &#125;</div><div class="line">    return curQueue.dequeue();</div><div class="line"></div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var stack = new Stack();</div><div class="line">console.log(stack.push(2));</div><div class="line">console.log(stack.push(4));</div><div class="line">console.log(stack.push(6));</div><div class="line">console.log(stack.pop());</div><div class="line">console.log(stack.push(8));</div><div class="line">console.log(stack.push(10));</div><div class="line">console.log(stack.pop());</div><div class="line">console.log(stack.pop());</div><div class="line">console.log(stack.pop());</div><div class="line">console.log(stack.pop());</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/07/22/stackQueue/" data-id="cjpez1ugy002clx3g0s6ljg7c" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
 
     </footer>
   </div>
@@ -139,13 +574,20 @@
 <li>throttle(节流): 设置一个阈值，在阈值内，把触发的事件合并成一次执行，当达到阈值，必行执行</li>
 <li>debounce(去抖动): 把触发非常频繁的事件合并成一次执行 </li>
 </ul>
-<h2 id="throttle"><a href="#throttle" class="headerlink" title="throttle"></a>throttle</h2><p>###代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> throttle = <span class="function">(<span class="params">fn, delay</span>) =&gt;</span> &#123;</div><div class="line">  <span class="keyword">const</span> startTime;</div><div class="line">  <span class="keyword">return</span> () &#123;</div><div class="line">    <span class="keyword">const</span> curTime = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line">    <span class="keyword">if</span> (curTime - startTime&gt;= delay) &#123;</div><div class="line">      fn.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>);</div><div class="line">      startTime = curTime;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<h2 id="throttle"><a href="#throttle" class="headerlink" title="throttle"></a>throttle</h2><h3 id="方法一：时间戳"><a href="#方法一：时间戳" class="headerlink" title="方法一：时间戳"></a>方法一：时间戳</h3><p>利用本次执行的时间与上次执行的时间相比较<br>特点：先执行目标函数，后等待规定的时间段, 一般首次都会触发, 最后一次如果时间不满，不会触发<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">throttle</span>(<span class="params">fn, delay</span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> startTime = +<span class="keyword">new</span> <span class="built_in">Date</span>;</div><div class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">const</span> curTime = +<span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line">    <span class="keyword">if</span> (curTime - startTime &gt;= delay) &#123;</div><div class="line">      fn.apply(<span class="keyword">this</span>.arguments);</div><div class="line">      startTime = curTime;</div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="方法二-定时器"><a href="#方法二-定时器" class="headerlink" title="方法二:定时器"></a>方法二:定时器</h3><p>利用定时器实现时间间隔<br>特点：先等待够规定时间，再执行，即停止触发后，若定时器已经在任务队列里注册了目标函数，它也会执行最后一次。首次不会触发</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">throttle</span>(<span class="params">fn, wait</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> time, context;</div><div class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    context = <span class="keyword">this</span>;</div><div class="line">    <span class="keyword">if</span>(!time) &#123;</div><div class="line">      time = setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        fn.apply(context, <span class="built_in">arguments</span>);</div><div class="line">        time = <span class="literal">null</span>;</div><div class="line">      &#125;, wait);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="方法三：时间戳-定时器"><a href="#方法三：时间戳-定时器" class="headerlink" title="方法三：时间戳+定时器"></a>方法三：时间戳+定时器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">function throttle(func, wait) &#123;</div><div class="line">  let previous = 0;</div><div class="line">  let context, args, time, remaining;</div><div class="line">  return function() &#123;</div><div class="line">    let now = +new Date();</div><div class="line">    context = this;</div><div class="line">    args = arguments;</div><div class="line">    remaining = wait - (now - previous);</div><div class="line">    if (remaining &lt;= 0) &#123;</div><div class="line">      func.apply(context, args);</div><div class="line">      previous = now;</div><div class="line">    &#125; else &#123;</div><div class="line">      if (time) clearTimeout(time);</div><div class="line">      time = setTimeout(function() &#123;</div><div class="line">        func.apply(context, args);</div><div class="line">        time = null;</div><div class="line">        previous = +new Date();</div><div class="line">      &#125;, remaining);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h3 id="方法四：underscore的实现方法"><a href="#方法四：underscore的实现方法" class="headerlink" title="方法四：underscore的实现方法"></a>方法四：underscore的实现方法</h3><p>通过leading， trailing对首尾是否调用<br>leading：false 表示禁用第一次执行<br>trailing: false 表示禁用停止触发的回调</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">const throttle = function(func, wait, options) &#123;</div><div class="line">  var timeout, context, args, result;</div><div class="line">  var previous = 0;</div><div class="line">  if (!options) options = &#123;&#125;;</div><div class="line"></div><div class="line">  var later = function() &#123;</div><div class="line">    previous = options.leading === false ? 0 : +new Date;</div><div class="line">    timeout = null;</div><div class="line">    result = func.apply(context, args);</div><div class="line">    if (!timeout) context = args = null;</div><div class="line">  &#125;;</div><div class="line"></div><div class="line">  var throttled = function() &#123;</div><div class="line">    var now = +new Date();</div><div class="line">    if (!previous &amp;&amp; options.leading === false) previous = now;</div><div class="line">    var remaining = wait - (now - previous);</div><div class="line">    context = this;</div><div class="line">    args = arguments;</div><div class="line">    if (remaining &lt;= 0 || remaining &gt; wait) &#123;</div><div class="line">      if (timeout) &#123;</div><div class="line">        clearTimeout(timeout);</div><div class="line">        timeout = null;</div><div class="line">      &#125;</div><div class="line">      previous = now;</div><div class="line">      result = func.apply(context, args);</div><div class="line">      if (!timeout) context = args = null;</div><div class="line">    &#125; else if (!timeout &amp;&amp; options.trailing !== false) &#123;</div><div class="line">      timeout = setTimeout(later, remaining);</div><div class="line">    &#125;</div><div class="line">    return result;</div><div class="line">  &#125;;</div><div class="line"></div><div class="line">  throttled.cancel = function() &#123;</div><div class="line">    clearTimeout(timeout);</div><div class="line">    previous = 0;</div><div class="line">    timeout = context = args = null;</div><div class="line">  &#125;;</div><div class="line"></div><div class="line">  return throttled;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 <h3 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a>适用场景</h3><p>频繁触发时间，且在一定时间内需要执行</p>
 <ol>
 <li>鼠标移动，</li>
-<li>窗口滚动<h2 id="debounce"><a href="#debounce" class="headerlink" title="debounce"></a>debounce</h2>###代码<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> debounce = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line"> <span class="keyword">let</span> timer = <span class="literal">null</span>;</div><div class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    clearTimeout(timer);</div><div class="line">    timer = setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">      fn.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>);</div><div class="line">    &#125;, delay);</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-</li>
+<li>窗口滚动</li>
 </ol>
+<h2 id="debounce"><a href="#debounce" class="headerlink" title="debounce"></a>debounce</h2><p>###代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">debounce</span>(<span class="params">func, wait</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> timeout;</div><div class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> context = <span class="keyword">this</span>, args = <span class="built_in">arguments</span>;</div><div class="line">    clearTimeout(timeout);</div><div class="line">    timeout = setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">      func.apply(context, args);</div><div class="line">    &#125;, wait);</div><div class="line"></div><div class="line">  &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>有时候希望能实现 在一个周期内第一次触发，就立即执行一次，然后一定时间段内都不能再执行目标函数<br>优化后：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">var debounce = function(func, wait, immediate) &#123;</div><div class="line">  var timeout, args, context, timestamp, result;</div><div class="line">  var later = function() &#123;</div><div class="line">    var last = +new Date() - timestamp;</div><div class="line">    if (last &lt; wait &amp;&amp; last &gt;= 0) &#123;</div><div class="line">      timeout = setTimeout(later, wait - last);</div><div class="line">    &#125; else &#123;</div><div class="line">      timeout = null;</div><div class="line">      if (!immediate) &#123;</div><div class="line">        result = func.apply(context, args);</div><div class="line">        if (!timeout) context = args = null;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line"></div><div class="line">  return function() &#123;</div><div class="line">    context = this;</div><div class="line">    args = arguments;</div><div class="line">    timestamp = +new Date();</div><div class="line">    var callNow = immediate &amp;&amp; !timeout;</div><div class="line">    if (!timeout) timeout = setTimeout(later, wait);</div><div class="line">    if (callNow) &#123;</div><div class="line">      result = func.apply(context, args);</div><div class="line">      context = args = null;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    return result;</div><div class="line">  &#125;;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>如果immediate为true的话，立刻调用，然后wait内不可以再次调用，<br>可以用于提交等操作</p>
 <h3 id="适用场景-1"><a href="#适用场景-1" class="headerlink" title="适用场景"></a>适用场景</h3><p>频繁触发事件, 且可以合并处理</p>
 <ol>
 <li>用户输入搜索</li>
@@ -155,7 +597,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/25/throttle-debounce/" data-id="cjp4wffsf0020gh3gg6kyulm0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/25/throttle-debounce/" data-id="cjpez1uh4002qlx3glytbo6i8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -193,7 +635,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/01/curl/" data-id="cjp4wffrc0009gh3gp52nugaq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/01/curl/" data-id="cjpez1ufn000dlx3gnx9e1tqi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -240,10 +682,61 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/03/webbench/" data-id="cjp4wffsh0025gh3g9pz6l3wo" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/05/03/webbench/" data-id="cjpez1uh5002ulx3g656irwhg" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nodejs/">Nodejs</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hexo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/01/hexo/" class="article-date">
+  <time datetime="2018-03-01T13:11:47.000Z" itemprop="datePublished">2018-03-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/01/hexo/">hexo + Github搭建自己的博客</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><p>新建文章</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo n (hexo new) [filename]</div></pre></td></tr></table></figure>
+</li>
+<li><p>部署到Github</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo g (hexo generate) # 生成</div><div class="line">hexo s (hexo server) # 启动本地web服务器</div><div class="line">hexo d (hexo deploy)# 部署到Github</div></pre></td></tr></table></figure>
+</li>
+<li><p>插入本地图片<br>图片可以放在文章目录中，文章的目录需要配置_config.yml文件,将post_asset_folder设置为true</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">post_asset_folder: true</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>执行命令 hexo new [filename],会在_posts文件夹中生成filename.md, filename文件夹, 将图片资源放到filename文件夹中，就可以在文章中引用。具体引用方式如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// 只在文章中显示</div><div class="line">![](image.jpg)</div><div class="line">// 在文章和首页中同时显示</div><div class="line">&#123;% asset_img image.jpe This is an image %&#125;</div></pre></td></tr></table></figure></p>
+<p>参考文章：<br><a href="https://yanyinhong.github.io/2017/05/02/How-to-insert-image-in-hexo-post/" target="_blank" rel="external">https://yanyinhong.github.io/2017/05/02/How-to-insert-image-in-hexo-post/</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/03/01/hexo/" data-id="cjpez1uft000olx3g3wjuh5lo" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/">blog</a></li></ul>
 
     </footer>
   </div>
@@ -280,7 +773,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/16/python-array/" data-id="cjp4wffs10014gh3g5ogl0e41" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/01/16/python-array/" data-id="cjpez1ugg001llx3g5e3d6bv2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -323,7 +816,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/16/python-matplotlib/" data-id="cjp4wffs3001bgh3gfw5q04mc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/01/16/python-matplotlib/" data-id="cjpez1ugl001rlx3gijutvkvs" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -370,10 +863,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/15/python-debug/" data-id="cjp4wffs10017gh3g0duovbl9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/01/15/python-debug/" data-id="cjpez1ugg001nlx3gnxybh58t" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python-debug/">Python debug</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
 
     </footer>
   </div>
@@ -420,7 +913,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/15/machinelearing/" data-id="cjp4wffrx000sgh3gogmaffjo" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/01/15/machinelearing/" data-id="cjpez1ug30017lx3g5ojgx3io" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/机器学习/">机器学习</a></li></ul>
@@ -464,7 +957,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/21/thrift/" data-id="cjp4wffsd001vgh3gyu3i7255" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/21/thrift/" data-id="cjpez1uh1002jlx3gz61al5k8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/thrift/">thrift</a></li></ul>
@@ -510,439 +1003,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/13/python-numpy/" data-id="cjp4wffs4001dgh3g63qzmtkk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/13/python-numpy/" data-id="cjpez1ugp0024lx3grywhcb39" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
 
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-python-start" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/11/13/python-start/" class="article-date">
-  <time datetime="2017-11-13T04:43:55.000Z" itemprop="datePublished">2017-11-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/13/python-start/">python-start</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>** 安装模块</p>
-<ul>
-<li>使用pip安装包<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">pip install numpy</div><div class="line"></div><div class="line">python // 进入交互式命令行</div><div class="line">type(变量) // 查看变量的类型</div><div class="line">dir(variable) // 查看变量的属性</div><div class="line">hasattr(variable, attribute) // 查看变量是否有某种属性</div><div class="line">Ctrl+D // 退出交互式命令行</div></pre></td></tr></table></figure>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/13/python-start/" data-id="cjp4wffs6001egh3gbr77f9he" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-tcp" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/11/10/tcp/" class="article-date">
-  <time datetime="2017-11-10T11:17:09.000Z" itemprop="datePublished">2017-11-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/10/tcp/">tcp</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h3><h3 id="四次分手"><a href="#四次分手" class="headerlink" title="四次分手"></a>四次分手</h3><h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p><a href="https://github.com/jawil/blog/issues/14" target="_blank" rel="external">https://github.com/jawil/blog/issues/14</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/10/tcp/" data-id="cjp4wffsd001tgh3gs5aivu32" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-wireshark" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/11/10/wireshark/" class="article-date">
-  <time datetime="2017-11-10T09:33:34.000Z" itemprop="datePublished">2017-11-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/10/wireshark/">wireshark</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>## </p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/10/wireshark/" data-id="cjp4wffsj002agh3ge5icx8t6" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/抓包/">抓包</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-tcpdump" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/11/10/tcpdump/" class="article-date">
-  <time datetime="2017-11-10T09:33:14.000Z" itemprop="datePublished">2017-11-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/10/tcpdump/">tcpdump</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="tcpdump"><a href="#tcpdump" class="headerlink" title="tcpdump"></a>tcpdump</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo tcpdump</div><div class="line"></div><div class="line">sudo tcpdump -X -n host www.baidu.com   //浏览器中打开页面，查看数据包的传输</div></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/10/tcpdump/" data-id="cjp4wffse001xgh3gt31orsi1" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/抓包/">抓包</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-python-install" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/07/18/python-install/" class="article-date">
-  <time datetime="2017-07-18T08:38:29.000Z" itemprop="datePublished">2017-07-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/18/python-install/">pyenv安装多版本Python</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">//安装</div><div class="line">brew install pyenv</div><div class="line">//设置pyenv</div><div class="line">echo &apos;export PYENV_ROOT=&quot;$HOME/.pyenv&quot;&apos; &gt;&gt; ~/.zshrc</div><div class="line">echo &apos;export PATH=&quot;$PYENV_ROOT/bin:$PATH&quot;&apos; &gt;&gt; ~/.zshrc</div><div class="line">echo &apos;eval &quot;$(pyenv init -)&quot;&apos; &gt;&gt; ~/.zshrc</div><div class="line"></div><div class="line">//重新加载shell</div><div class="line">exec $SHELL -l</div><div class="line"></div><div class="line">// 查看当前可用的版本</div><div class="line">pyenv versions</div><div class="line"></div><div class="line">//安装特定版本的python</div><div class="line">pyenv install &lt;python version&gt;</div><div class="line"></div><div class="line">//在特定目录下，设置局部python版本</div><div class="line">pyenv local &lt;python version&gt;</div></pre></td></tr></table></figure>
-<h3 id="python-包管理工具pip"><a href="#python-包管理工具pip" class="headerlink" title="python 包管理工具pip"></a>python 包管理工具pip</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">pip install &lt;package name&gt;</div><div class="line"></div><div class="line">pip list 查看安装的包</div></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/18/python-install/" data-id="cjp4wffs20019gh3g1t5zedo9" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-perl-install-modules" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/07/17/perl-install-modules/" class="article-date">
-  <time datetime="2017-07-17T08:28:21.000Z" itemprop="datePublished">2017-07-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/17/perl-install-modules/">Perl安装模块</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="利用cpan安装模块"><a href="#利用cpan安装模块" class="headerlink" title="利用cpan安装模块"></a>利用cpan安装模块</h2><p>配置CPAN.pm</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">cpan</div><div class="line">o conf makepl_arg INSTALL_BASE=/Users/marong</div><div class="line">o conf commit //提交修改</div><div class="line">o conf mbuild_arg --install_base /Users/marong</div><div class="line">o conf commit //提交修改</div><div class="line">o conf //查修配置参数是否生效</div><div class="line"></div><div class="line">cpan IPC::System::Simple //安装模块，安装目录/User/marong/lib/perl5</div><div class="line">perldoc IPC::System::Simple //查看安装模块文档</div></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/17/perl-install-modules/" data-id="cjp4wffrz000ygh3gkal2s0uo" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-react-isomorphic" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/06/26/react-isomorphic/" class="article-date">
-  <time datetime="2017-06-26T11:48:30.000Z" itemprop="datePublished">2017-06-26</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/26/react-isomorphic/">React同构</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li><p>同构<br>React组件既可以在浏览器端渲染，也可以在服务器端渲染产生HTML，代码可以运行在不同的环境下，这种方式叫“同构”</p>
-</li>
-<li><p>服务端渲染<br>对于来自浏览器的HTTP请求，服务器通过访问存储器或者访问别的API服务等方式获得数据，然后根据数据渲染生成HTML返回给浏览器，浏览器只需要把HTML渲染出来。</p>
-</li>
-</ul>
-<ul>
-<li>优点<br>利于SEO<br>加速首屏渲染<br>大多数情况下，服务器获取数据比浏览器端获取数据要快</li>
-<li>缺点<br>页面大小对性能的影响，如果服务器端产生的HTML过大，首页下载的HTML要比纯浏览器渲染要大，这样下载HTML的时间会增长，服务器渲染未必能获得更好的性能</li>
-</ul>
-<ul>
-<li>浏览器端渲染<br>服务器返回的HTML只包含几个无内容的元素作为页面框架，网页中引用的JavaScript会直接访问API服务器来获取数据，取到的数据再结合模板来生成HTML字符串，插入到页面框架总，产生了用户最终看到的界面。<br>模板库的效率并不是很高，用户需要等待API请求成功之后才能看到第一条内容，反而让用户感觉更慢了，并没有提高用户体验。</li>
-<li>完全浏览器渲染技术</li>
-</ul>
-<ul>
-<li>各种应用框架,包含路由和应用结构功能</li>
-<li>模板库</li>
-<li><p>服务器端的API支持<br>传统的模板库就是DOM树的操作，将HTML字符串插入到网页中，无论如何优化都有它的极限。<br>React的Virtual DOM工作原理，配合生命周期函数的应用，性能不是字符串替换的模板库能够比拟的。<br>完全浏览器渲染的缺点：<br>首页性能,首页加载白屏问题<br>不利于SEO</p>
-</li>
-<li><p>React同构</p>
-</li>
-</ul>
-<p>用户第一请求页面时候，node服务端做初始渲染，node服务端接受到请求后，把需要用的HTML渲染成HTML字符串，返回给客户端，之后，客户端接管渲染的控制权限</p>
-<ul>
-<li><p>NODE服务端渲染<br>Redux在客户端提供应用初始所需的state,客户端把服务端返回的state作为初始的state<br>发送响应前用ReactDOMServer.renderToString(el)渲染初始的HTML,渲染时会计算所生成HTML的校验和，并存放在根节点的属性data-react-checksum中<br>服务端最后一步就是把初始组件的HTML和初始state注入到客户端能够渲染的模板中。<br>state的传递通过script标签来吧preloadedState赋给window.<strong>INITIAL_STATE</strong><br>注入js bundle文件<br>客户端就可以通过window.<strong>INITITIAL</strong>STATE__来获取preloadedState,</p>
-</li>
-<li><p>浏览器客户端渲染<br>从window.<strong>INITIAL_STATE</strong>得到初始的state，并传递给createStore()<br>页面加载js后，打包JS启动，调用React.render()重新渲染一遍React组件，在重新计算DOM树之后，也会计算一遍校验和，和服务器的校验和做一个对比，如果二者相同，就没有必要做DOM操作了。然后会与服务端渲染的HTML的data-react-id属性做关联。这会把新生成的React实例与服务端的虚拟DOM连接起来。因为同样适用了来自Redux Store的初始state,并且view组件代码是一样的，结果就是我们得到了相同的DOM</p>
-</li>
-</ul>
-<p>如果服务器端渲染和浏览器端渲染产生的内容不一致，用户会先看到服务器端渲染的内容，浏览器端生成的DOM树，覆盖掉服务器产生的HTML,用户会看到一次闪烁。<br>实现同构一定要保正服务器端和浏览器段渲染的结果一致。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/26/react-isomorphic/" data-id="cjp4wffs7001hgh3gpw7pykiu" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-node-debug" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/06/18/node-debug/" class="article-date">
-  <time datetime="2017-06-18T13:09:44.000Z" itemprop="datePublished">2017-06-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/18/node-debug/">NodeJs调试</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="node-inspect"><a href="#node-inspect" class="headerlink" title="node-inspect"></a>node-inspect</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">node-debug index.js</div></pre></td></tr></table></figure>
-<h2 id="chrome-devtools"><a href="#chrome-devtools" class="headerlink" title="chrome devtools"></a>chrome devtools</h2><p>node –inspect来调试，在需要调试的地方设置下debugger, 在chrome浏览器中，打开commandline中提示的调试地址<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&quot;scripts&quot;: &#123;</div><div class="line">    &quot;start&quot;: &quot;node ./worker | bunyan&quot;,</div><div class="line">    &quot;debug&quot;: &quot;node --inspect --debug-brk  ./worker | bunyan&quot;,</div><div class="line">    &quot;lint&quot;: &quot;eslint . --fix &amp;&amp; echo &apos;Eslint Passed\\n&apos;&quot;,</div><div class="line">    &quot;test&quot;: &quot;eslint . --fix &amp;&amp; echo &apos;Eslint Passed\\n&apos; &amp;&amp; node test/ | faucet&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/18/node-debug/" data-id="cjp4wffry000wgh3gydlax542" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-react-start" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/06/16/react-start/" class="article-date">
-  <time datetime="2017-06-16T03:33:27.000Z" itemprop="datePublished">2017-06-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/16/react-start/">react 入门</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h3><ul>
-<li>报语法错误，最后排除发现，component里li元素的标签没有闭合<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">performUpdateIfNecessary: Unexpected batch number</div><div class="line">//没有定位到具体出错的代码</div><div class="line">原因是新增加的组件里没有对应的reducer</div></pre></td></tr></table></figure>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/16/react-start/" data-id="cjp4wffs7001igh3gcllch28w" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-iterm-commandline" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/06/12/iterm-commandline/" class="article-date">
-  <time datetime="2017-06-12T10:44:51.000Z" itemprop="datePublished">2017-06-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/12/iterm-commandline/">iterm-commandline</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>open index.html : 在 浏览器中打开页面<br>d 列出在会话访问的目录列表，输入列表前的序号，即可直接跳转</p>
-<h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Command+R 清空命令行</div></pre></td></tr></table></figure>
-<h2 id="oh-my-zsh-插件"><a href="#oh-my-zsh-插件" class="headerlink" title="oh-my-zsh 插件"></a>oh-my-zsh 插件</h2><p>在.zshrc文件中配置要加载的插件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">brew install autojump</div><div class="line">plugins=(git autojump)</div></pre></td></tr></table></figure></p>
-<h3 id="autojump"><a href="#autojump" class="headerlink" title="autojump"></a>autojump</h3><p>快速打开文件<br>在.zshrc,.bash_profile中添加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[ -f /usr/local/etc/profile.d/autojump.sh ] &amp;&amp; . /usr/local/etc/profile.d/autojump.sh</div></pre></td></tr></table></figure></p>
-<ul>
-<li>用法<br>安装autojump之后，zsh会自动记录访问过的目录，目录名支持模糊匹配<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">j &lt;目录名&gt;</div><div class="line">j --stat 查看历史路径库</div></pre></td></tr></table></figure>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/12/iterm-commandline/" data-id="cjp4wffro000mgh3ge9dp336z" class="article-share-link">Share</a>
-      
-      
     </footer>
   </div>
   
@@ -966,7 +1031,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Emacs/">Emacs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVVM-Vue/">MVVM Vue</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mobile/">Mobile</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nodejs/">Nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Perl/">Perl</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python-debug/">Python debug</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Server/">Server</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vim/">Vim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/">mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/svn/">svn</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thrift/">thrift</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/抓包/">抓包</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/机器学习/">机器学习</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Emacs/">Emacs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTPS/">HTTPS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVVM-Vue/">MVVM Vue</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mobile/">Mobile</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nodejs/">Nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Perl/">Perl</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Server/">Server</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vim/">Vim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/browser/">browser</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/">mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mvvm/">mvvm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/svn/">svn</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tcp/">tcp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thrift/">thrift</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/抓包/">抓包</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/机器学习/">机器学习</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -976,7 +1041,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/CSS/" style="font-size: 13.33px;">CSS</a> <a href="/tags/Emacs/" style="font-size: 10px;">Emacs</a> <a href="/tags/Git/" style="font-size: 13.33px;">Git</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/MVVM-Vue/" style="font-size: 10px;">MVVM Vue</a> <a href="/tags/Mobile/" style="font-size: 10px;">Mobile</a> <a href="/tags/Nodejs/" style="font-size: 10px;">Nodejs</a> <a href="/tags/Perl/" style="font-size: 10px;">Perl</a> <a href="/tags/Python/" style="font-size: 13.33px;">Python</a> <a href="/tags/Python-debug/" style="font-size: 10px;">Python debug</a> <a href="/tags/React/" style="font-size: 13.33px;">React</a> <a href="/tags/Server/" style="font-size: 10px;">Server</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/algorithm/" style="font-size: 13.33px;">algorithm</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/python/" style="font-size: 16.67px;">python</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/thrift/" style="font-size: 10px;">thrift</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/抓包/" style="font-size: 13.33px;">抓包</a> <a href="/tags/机器学习/" style="font-size: 10px;">机器学习</a>
+      <a href="/tags/CSS/" style="font-size: 12.5px;">CSS</a> <a href="/tags/Emacs/" style="font-size: 10px;">Emacs</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTTPS/" style="font-size: 10px;">HTTPS</a> <a href="/tags/JavaScript/" style="font-size: 17.5px;">JavaScript</a> <a href="/tags/MVVM-Vue/" style="font-size: 10px;">MVVM Vue</a> <a href="/tags/Mobile/" style="font-size: 10px;">Mobile</a> <a href="/tags/Nodejs/" style="font-size: 10px;">Nodejs</a> <a href="/tags/Perl/" style="font-size: 10px;">Perl</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/React/" style="font-size: 12.5px;">React</a> <a href="/tags/Server/" style="font-size: 10px;">Server</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/algorithm/" style="font-size: 15px;">algorithm</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/mvvm/" style="font-size: 10px;">mvvm</a> <a href="/tags/python/" style="font-size: 15px;">python</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/tcp/" style="font-size: 10px;">tcp</a> <a href="/tags/thrift/" style="font-size: 10px;">thrift</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/抓包/" style="font-size: 12.5px;">抓包</a> <a href="/tags/机器学习/" style="font-size: 10px;">机器学习</a>
     </div>
   </div>
 
@@ -985,7 +1050,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -998,23 +1063,23 @@
       <ul>
         
           <li>
-            <a href="/2018/12/01/hexo/">hexo</a>
+            <a href="/2018/12/08/https/">HTTPS</a>
           </li>
         
           <li>
-            <a href="/2018/06/25/throttle-debounce/">throttle-debounce</a>
+            <a href="/2018/12/07/browserCatche/">browserCatche</a>
           </li>
         
           <li>
-            <a href="/2018/06/01/curl/">curl</a>
+            <a href="/2018/12/05/mvvm/">双向绑定</a>
           </li>
         
           <li>
-            <a href="/2018/05/03/webbench/">webbench</a>
+            <a href="/2018/12/01/bindContext/">call, apply, bind的区别</a>
           </li>
         
           <li>
-            <a href="/2018/01/16/python-array/">python-array</a>
+            <a href="/2018/12/01/combineSum/">N个数相加的和为M</a>
           </li>
         
       </ul>
